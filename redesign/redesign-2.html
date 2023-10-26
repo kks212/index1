@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <title>DESIGN WEB</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+        a {color: inherit; text-decoration: none;}
+        #container {width: 100%;}
+        ul {list-style: none;}
+        #up {margin-top: 50px; background: none; border: none; z-index: 10000; 
+              position: fixed; bottom: 50px; right: 5%;}
+        #down {margin-top: 50px; background: none; border: none; z-index: 10000;
+              position: fixed; bottom: 20px; right: 5%;}
+
+        /* ------------------------------------------------------------------------------------- */
+        header {width: 100%; height: 500px; position: fixed; left: 0; top: 0; z-index: 10; ;}
+        #header1 {width: 100%; padding: 3px; background: black; color: white; display: flex;}
+        #header1>.component {position: relative; display: flex; height: 27px; padding: 3px; overflow: hidden;
+                             width: 40%; margin: 0 auto;}
+        #header1>.component>i {position: absolute; padding: 5px;}
+        #header1>.component>#headerText>p {position: absolute; left: 50%; margin-left: -70px;}
+        #header1>.component>.fa-chevron-left {left: 0px;}
+        #header1>.component>.fa-chevron-right {right: 20px;}
+        #header1>#count {width: 40%; display: flex; justify-content: center;
+                         margin-right: 3%; font-size: 12px; margin: 5px 0 0 0;}
+        /* ----header2--------------------------------------------------------------------------------- */
+        #header2 {width: 100%; height: 1110px; padding: 5px;}
+        #header2>#logo {float: left; margin-left: 5%; position: absolute;}
+        #header2>#rightBar {width: 100%; float: right; margin-right: 2%; position: relative;}
+        #login {position: absolute; top: 10px; right: 0; }
+        #login>input {position: absolute; top: 3px ; left: -200px; border: #ccc; border-radius: 10px; 
+                      padding: 5px 10px; opacity: 0.7; }
+        #login>ul {display: flex;}
+        #login>ul>li {margin: 5px; font-size: 14px;}
+        .fa-magnifying-glass:hover {opacity: 0.7;}
+
+        #category {position: absolute; top: 50px; right: 50%; margin-right: -210px;
+                  font-size: 20px; font-weight: bold; cursor: pointer;}
+        #category>ul {display: flex;}
+        #category>ul>li {margin: 0 10px; width: 100%;}
+            /* category*/
+        .category1>ul {position: fixed; top: 130px; left: 0px; width: 100%; 
+                       padding: 20px;  background: rgba(255, 255, 255, 0.7);}
+            /* category_style */
+                        .style>ul {height: 250px; display: flex; justify-content: center;}
+                        .style>ul>li {padding: 10px 20px; text-align: center; opacity: 0.7; margin: 0 20px;}
+                        .style>ul li img {opacity: 0.7; transition: 0.5s;}
+                        .style ul li:hover img {opacity: 1; transform: scale(1.1);}
+                        .style>ul>li:hover {opacity: 1;}  
+            /* category_men */    .subBar {width: 900px; margin: 0 auto;} /*men+women*/
+                        .men>ul {height: 310px; font-size: 17px; padding: 20px 5px; }
+                        .menSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
+                                 float: left; }
+                        .menSub>h4 {margin-bottom: 7px;}
+                        .menSub>h4:hover {opacity: 0.7;}  
+                        .menSub:nth-child(3) {margin-right: 52px;}
+                        .menSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -95px;}
+                        .menSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -100px;}
+                        .menSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .menSub>ul>li:hover { color: #ff0000;}  
+            /* category_women */
+                        .women>ul {height: 340px; font-size: 17px; padding: 20px 5px; }
+                        .womenSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
+                                   float: left; }
+                        .womenSub>h4 {margin-bottom: 7px;}
+                        .womenSub>h4:hover {opacity: 0.7;}  
+                        .womenSub:nth-child(3) {margin-right: 52px;}
+                        .womenSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -115px;}
+                        .womenSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -120px;}
+                        .womenSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .womenSub>ul>li:hover { color: #ff0000;}  
+            /* category_explore */
+                        .explore>ul {height: 310px; font-size: 17px; padding: 20px 5px; 
+                                     display: flex; justify-content: center; }
+                        .exploreSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px; 
+                                     width: 30%;}
+                        .exploreSub>h4 {margin-bottom: 7px;}
+                        .exploreSub>h4:hover {opacity: 0.7;}  
+                        .exploreSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .exploreSub>ul>li:hover { color: #ff0000;}  
+
+        /* ----main_intro--------------------------------------------------------------------------------- */
+        main {width: 100%; padding-top: 27px;}
+        #intro {width: 100%; height: 1100px; position: relative; background: url(redesign_img/hiking.jpg) no-repeat center;}
+        #introText {width: 100%; position: absolute; top: 20%; text-align: center; 
+                    padding: 10px; color: black;}
+        #introText>h1 {font-size: 100px; }
+        #introText>h4 {font-size: 25px; }
+        /* #introText>button {padding: 3px 5px; margin: 20px 8px; font-weight: bold; color: rgba(0, 0, 0, 0.5);
+                           border: 1px solid #ccc; border-radius: 1px; animation: btn 1.5s infinite;}
+                           @keyframes btn {0% {}
+                                           50% {color: rgba(0, 0, 0, 1);;}  
+                                           100% {}}
+         #introText>button:hover {color: rgba(255, 0, 0, 0.5); animation: none;} */
+        /* ----main2_brand--------------------------------------------------------------------------------- */
+        #brand {width: 100%; height: 1200px; position: relative; background: url(redesign_img/bag.jpg) no-repeat center;}
+        #brand>h1 {font-size: 60px; padding: 30px 0px 15px; position: absolute; top: 50%; 
+                   margin: -185px 0; color: white; z-index: 100;}
+        #brandText {width: 750px; height: 350px; position: absolute; top: 50%; margin: -110px 0; background-color: rgba(255, 0, 0, 0.5);
+                    padding: 60px 0; color: white;}
+        #brandText>h3 {font-size: 20px; padding: 0 10px;}
+        #brandText>p {font-size: 15px; padding: 10px 30px 50px 10px;}
+        #brandText>p>span {font-size: 16px; font-weight: bold; }
+        #brandText>p:nth-child(3) {position: absolute; right: 5px; bottom: -20px;}
+        /* ----main2_introduce--------------------------------------------------------------------------------- */
+        #introduce {width: 100%; height: 1200px; background: url(redesign_img/cave1.jpg) no-repeat center;}
+        #introduceImg {width: 90%; position: relative; top: 250px; left: 30px;}
+        #introduceImg>img {width: 450px;}
+        #introduceImg>h3 {position: absolute; top: 195px; left: 150px;}
+        #introduceImg>p {position: absolute; font-weight: bold; font-size: 17px;}
+        #introduceImg>p:nth-child(3) {top: 110px; left: 85px;}
+        #introduceImg>p:nth-child(4) {top: 300px; left: 60px;}
+        #introduceImg>p:nth-child(5) {top: 405px; left: 195px;}
+        #introduceImg>p:nth-child(6) {top: 300px; left: 340px;}
+        #introduceImg>p:nth-child(7) {top: 110px; left: 325px;}
+
+        
+        /* ----main3_product--------------------------------------------------------------------------------- */
+         #product {width: 100%; height: 1010px; position: relative; display: flex;}
+         #product>#product1 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_1.jpg) no-repeat center;}
+         #product>#product2 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_2.jpg) no-repeat center;}
+         #product>#product3 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_3.jpg) no-repeat center;}
+        .productText {width: 90%; height: 90%; background: rgba(0, 0, 0, 0.5); margin: 0 auto; 
+                      margin-top: 10%; display: none;}
+        /* #product1:hover .productText{
+            display: block; transition: 1.5s;
+        } */
+
+
+        /* ----footer--------------------------------------------------------------------------------- */
+         footer {width: 100%; height: 200px; background-color: black; opacity: 0.8; color: #ccc;}
+         #footerText {margin: 0 auto; width: 500px; text-align: center; border: 1px solid yellow;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <a href="#intro" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
+        <a href="#footerText" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+        <header>
+            <!------------------------------------------------------------------------------------->
+            <div id="header1">
+                <div class="component">
+                <div id="headerText">
+                     <p>SALE UP TO 50%</p>
+                     <p>NEW ARRIVAlS</p>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <script src="js/Jquery-3.7.1.js"></script>   <!---->
+                <script>
+                    $(function() {
+                        var i=0;
+                        $('#headerText>p').eq(0).show()
+                        $('#headerText>p').eq(1).hide()
+                       
+                        $('.fa-chevron-left').on('click', function() {   //왼쪽 버튼
+                             i++;   //i=1
+                             if(i>1) {i=0}  
+                             else( i = 1)        
+                            $('#headerText>p').eq(i).siblings().hide();
+                            $('#headerText>p').eq(i).show()  
+                        })
+    
+                        $('.fa-chevron-right').on('click', function() {    //오른쪽 버튼 
+                            i++;   //i=1
+                             if(i>1) {i=0}  
+                             else( i = 1)        
+                            $('#headerText>p').eq(i).siblings().hide();
+                            $('#headerText>p').eq(i).show()  
+                        })
+    
+                        setInterval(re,2000);
+                        function re() {
+                            if(i<1) {i++}
+                            else {i = 0}
+                            $('#headerText>p').eq(i).show()
+                            $('#headerText>p').eq(i).siblings().hide()  
+                            }
+                    })
+    
+                </script> <!--맨위 바-->
+
+                <div id="count">
+                    <span id="year"></span>. <span id="month"></span>. <span id="day"></span> / 
+                    <p></p>
+                    <script>
+                       setInterval(clock, 1000);
+                       function clock() {
+                       var today = new Date();
+                       var now = today.toLocaleTimeString();
+                       document.querySelector('#count>p').innerText=now;
+                       }
+
+                       var now = new Date();
+                       var year = now.getFullYear();
+                       var month = now.getMonth()+1;
+                       var day = now.getDate();
+                       
+                       document.getElementById('year').innerHTML=year
+                       document.getElementById('year').style.color='white'
+                       document.getElementById('year').style.fontSize='12px'
+                       
+                       
+                       document.getElementById('month').innerHTML=month
+                       document.getElementById('month').style.color='white'
+                       document.getElementById('month').style.fontSize='12px'
+                       
+                       
+                       document.getElementById('day').innerHTML=day
+                       document.getElementById('day').style.color='white'
+                       document.getElementById('day').style.fontSize='12px'
+                    </script><!--날짜 시간-->
+                </div>           
+           
+           
+            
+             </div>
+            <!------------------------------------------------------------------------------------->
+            <div id="header2">
+                <div id="logo"><a href="#intro"><img src="redesign_img/redesign_logo.png" width="110px"></a></div>
+                <div id="rightBar">
+                    <div id="login">
+                        <ul>
+                            <li><i class="fa-solid fa-magnifying-glass" style="color: red; cursor: pointer;"></i></li>
+                            <li><i class="fa-regular fa-heart" style="cursor: pointer;"></i></li>
+                            <li><i class="fa-regular fa-bell" style="cursor: pointer;"></i></li>
+                            <li><a href="#">MYPAGE</a></li>
+                            <li><a href="#">LOGIN</a></li>
+                            <li><a href="#">JOIN</a></li>
+                        </ul>
+                        <input type="text" placeholder="검색" autofocus>
+                    
+                        <script>
+                             $(function() {
+                                    $('#login>input').hide()
+                                $('.fa-magnifying-glass').on('click', function() {
+                                    $('#login>input').fadeToggle()
+                                })
+                        
+                            })
+                        </script><!--search-->
+                    </div>
+
+                    <div id="category">
+                        <ul>
+                            <li class="category1 style"><a href="#"><h4>STYLE</h4></a>
+                                <ul>
+                                    <li><img src="redesign_img/mountain.png">
+                                        <a href="#"><p>Mountain</p></a></li>
+                                    <li><img src="redesign_img/bike.png">
+                                        <a href="#"><p>Sports</p></a></li>
+                                    <li><img src="redesign_img/golf.png">
+                                        <a href="#"><p>Golf</p></a></li>
+                                    <li><img src="redesign_img/vest.png">
+                                        <a href="#"><p>Workwear</p></a></li>
+                                    <li><img src="redesign_img/camping.png">
+                                        <a href="#"><p>Camping</p></a></li>
+                                </ul>
+                            </li>
+                            <li class="category1 men"><a href="#"><h4>MEN</h4></a>
+                                <ul>
+                                    <div class="subBar">
+                                    <li class="menSub"><h4>Clothes</h4>
+                                        <ul>
+                                            <li>shell jacket</li>
+                                            <li>Insulation jacket</li>
+                                            <li>pants</li>
+                                            <li>fleece</li>
+                                            <li>base layer</li>
+                                            <li>shirts & tops</li>
+                                            <li>shorts</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Backpack</h4>
+                                        <ul>
+                                            <li>day pack</li>
+                                            <li>Multi day pack</li>
+                                            <li>travel & Life</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Climing equipment</h4>
+                                        <ul>
+                                            <li>harness</li>
+                                            <li>ropr bag</li>
+                                            <li>chalk bag</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Collection</h4>
+                                        <ul>
+                                            <li>Veilance</li>
+                                            <li>System_A</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>SHOP MORE</h4>
+                                        <ul>
+                                            <li>New Arrival</li>
+                                            <li>Ski & Snow Collection</li>
+                                            <li>Gift Guide</li>
+                                            <li>Layering Guide</li>
+                                            <li>Arc'type</li>
+                                            <li>Travel Collection</li>
+                                            <li>Exclusive</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Footwear</h4>
+                                        <ul>
+                                            <li>Boots</li>
+                                            <li>shoes</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Acc</h4>
+                                        <ul>
+                                            <li>gloves</li>
+                                            <li>hat</li>
+                                            <li>other accessories</li>
+                                        </ul>
+                                    </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="category1 women"><a href="#"><h4>WOMEN</h4></a>
+                                <ul>
+                                    <div class="subBar">
+                                    <li class="womenSub"><h4>Clothes</h4>
+                                        <ul>
+                                            <li>shell jacket</li>
+                                            <li>Insulation jacket</li>
+                                            <li>pants</li>
+                                            <li>fleece</li>
+                                            <li>base layer</li>
+                                            <li>shirts & tops</li>
+                                            <li>dresses & skirts</li>
+                                            <li>shorts</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Backpack</h4>
+                                        <ul>
+                                            <li>day pack</li>
+                                            <li>Multi day pack</li>
+                                            <li>travel & Life</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Climing equipment</h4>
+                                        <ul>
+                                            <li>harness</li>
+                                            <li>ropr bag</li>
+                                            <li>chalk bag</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Collection</h4>
+                                        <ul>
+                                            <li>Veilance</li>
+                                            <li>System_A</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>SHOP MORE</h4>
+                                        <ul>
+                                            <li>New Arrival</li>
+                                            <li>Ski & Snow Collection</li>
+                                            <li>Gift Guide</li>
+                                            <li>Layering Guide</li>
+                                            <li>Arc'type</li>
+                                            <li>Travel Collection</li>
+                                            <li>Exclusive</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Footwear</h4>
+                                        <ul>
+                                            <li>Boots</li>
+                                            <li>shoes</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Acc</h4>
+                                        <ul>
+                                            <li>gloves</li>
+                                            <li>hat</li>
+                                            <li>other accessories</li>
+                                        </ul>
+                                    </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="category1 explore"><a href="#"><h4>EXPLORE</h4></a>
+                                <ul>
+                                    <li class="exploreSub"><h4>EXPLORE</h4>
+                                        <ul>
+                                            <li>Whoo We Are</li>
+                                            <li>Bird Blog</li>
+                                            <li>Coommunity Event</li>
+                                            <li>Outer Peace</li>
+                                            <li>Sustainability</li>
+                                            <li>Arc'teryx Naming Scheme</li>
+                                            <li>Obsessive Design</li>
+                                        </ul>
+                                    </li>
+                                    <li class="exploreSub">
+                                        <img src="redesign_img/barimg.jpg">
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            
+            <script>
+                 $(function() {
+                      var menu = $('.category1')
+                        for(let i=0; i<=menu.length; i++) {
+                            $('.category1>ul').hide()
+                       $(menu).mouseover(function() {
+                        $(this).children('ul').stop().slideDown(500)
+                        $(this).siblings('li').children('ul').stop().hide()
+                        $(this).children().children('h4').css('color', 'red')
+                        $(this).siblings('li').children().children('h4').css('color', '')
+                                                      }
+                                                 )}
+                        
+                        $(menu).mouseout(function() {
+                        $(this).children('ul').stop().slideUp()
+                        $(this).siblings('li').children('ul').hide()
+                        $(this).children().children('h4').css('color', '')
+                                                      })
+                  }) 
+            </script><!--subBar-->
+            </div>
+        </header>
+            <!------------------------------------------------------------------------------------->
+        <main>
+
+            <article id="intro">
+                <div id="introText">
+                    <h4>기능성과 스타일로 완성하다</h4>
+                    <h1>ARCTERYX</h1>
+                </div>
+                <div class="none"></div>
+            </article>
+
+            <article id="brand">
+                <h1>ARCTERYX BRAND</h1>
+                <div id="brandText" class="none">
+                <h3>ABOUT US</h3>
+                <p><span>ARCHAEOPTERYX LITHOGRAPHICA</span> <br>
+                    1 억 4 천만 년 전에 한 생물이 적대적인 수평 세계를 탈출하려고 애썼습니다. <br>
+                    그 생명체는 날렵하고 강인해 졌으며 남들이 오르지 못한 장엄한 세계로 향했습니다. <br> 
+                    마침내 그는 진화를 거듭하며 깃털을 가진 날개를 가지게 되었고 기존의 세계와는 전혀 다른 <br> 
+                    먹이사슬 경쟁을 하게 되었습니다. 아키옵테릭스 리소그래피카(Archaeopteryx lithographica)  <br>
+                    라고 명명된 이 생명체는 공룡의 후계자로서 최초의 조류로 알려져 있습니다. 아크테릭스의  <br>
+                    이름은 진화를 거듭하려는 의지를 나타내며. 아웃도어 환경에서 인간이 한발을 더 내딛을수  <br>
+                    있도록 기여할 것입니다. 우리는 항상 더 좋은 방법이 있다고 믿습니다</p>
+
+                <p>MORE →</p>
+                </div>
+            </article>
+
+            <article id="introduce">
+                <div id="introduceImg" class="none">
+                    <img src="redesign_img/Untitled-1.png">
+                    <h3 style="color: red; font-size: 25px;">Who We Are</h3>
+                    <p>영감</p>
+                    <p>성능</p>
+                    <p>장인정신</p>
+                    <p>혁신의 아이콘</p>
+                    <p>지속가능성</p>
+                </div>
+            </article>
+            
+            <article id="product">
+                <div id="product1" class="k">
+                    <div class="productText">
+                        <h4>NEW ARRIVE</h4>
+                    </div>
+                </div>
+                <div id="product2">
+                    <div class="productText">
+                        <h4>hikin & camping</h4>
+                    </div>
+                </div>
+                <div id="product3">
+                    <div class="productText">
+                        <h4>All Day Season</h4>
+                    </div>
+                </div>
+
+                <script>
+                    $(function() {
+                         i =0;
+                         if(i>=2) {i=0}
+                         else {i++}
+                         $('#product>div').on('mouseover', function() {
+                            $(this).children('.productText').css('display', 'block')
+                         })
+
+                        })
+                </script>
+            </article>
+        </main>
+
+        <footer>
+            <div id="footerText">
+                design by kks
+            </div>
+        </footer>
+
+    
+</body>
+</html>
