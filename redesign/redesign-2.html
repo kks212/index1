@@ -13,15 +13,15 @@
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
         a {color: inherit; text-decoration: none;}
-        #container {width: 100%;}
+        #container {width: 100%; margin: 0 auto;}
         ul {list-style: none;}
         #up {margin-top: 50px; background: none; border: none; z-index: 10000; 
-              position: fixed; bottom: 50px; right: 5%;}
+              position: fixed; bottom: 70px; right: 50px; color: white;}
         #down {margin-top: 50px; background: none; border: none; z-index: 10000;
-              position: fixed; bottom: 20px; right: 5%;}
+              position: fixed; bottom: 35px; right: 50px; color: white;}
 
         /* ------------------------------------------------------------------------------------- */
-        header {width: 100%; height: 500px; position: fixed; left: 0; top: 0; z-index: 10; ;}
+        header {width: 100%; margin: 0 auto; position: fixed; display: block; z-index: 10;}
         #header1 {width: 100%; padding: 3px; background: black; color: white; display: flex;}
         #header1>.component {position: relative; display: flex; height: 27px; padding: 3px; overflow: hidden;
                              width: 40%; margin: 0 auto;}
@@ -32,7 +32,7 @@
         #header1>#count {width: 40%; display: flex; justify-content: center;
                          margin-right: 3%; font-size: 12px; margin: 5px 0 0 0;}
         /* ----header2--------------------------------------------------------------------------------- */
-        #header2 {width: 100%; height: 1110px; padding: 5px;}
+        #header2 {width: 100%;  padding: 5px;}
         #header2>#logo {float: left; margin-left: 5%; position: absolute;}
         #header2>#rightBar {width: 100%; float: right; margin-right: 2%; position: relative;}
         #login {position: absolute; top: 10px; right: 0; }
@@ -42,12 +42,12 @@
         #login>ul>li {margin: 5px; font-size: 14px;}
         .fa-magnifying-glass:hover {opacity: 0.7;}
 
-        #category {position: absolute; top: 50px; right: 50%; margin-right: -210px;
+        #category {position: absolute; top: 70px; left: 50%; margin-left: -135px;
                   font-size: 20px; font-weight: bold; cursor: pointer;}
         #category>ul {display: flex;}
         #category>ul>li {margin: 0 10px; width: 100%;}
             /* category*/
-        .category1>ul {position: fixed; top: 130px; left: 0px; width: 100%; 
+        .category1>ul {position: fixed; top: 150px; left: 0px; width: 100%; 
                        padding: 20px;  background: rgba(255, 255, 255, 0.7);}
             /* category_style */
                         .style>ul {height: 250px; display: flex; justify-content: center;}
@@ -89,19 +89,17 @@
 
         /* ----main_intro--------------------------------------------------------------------------------- */
         main {width: 100%; padding-top: 27px;}
-        #intro {width: 100%; height: 1100px; position: relative; background: url(redesign_img/hiking.jpg) no-repeat center;}
+        #intro {width: 100%; height: 1100px; position: relative; 
+                background: url(redesign_img/hiking.jpg) no-repeat center;
+                background-size: cover; }
         #introText {width: 100%; position: absolute; top: 20%; text-align: center; 
                     padding: 10px; color: black;}
         #introText>h1 {font-size: 100px; }
         #introText>h4 {font-size: 25px; }
-        /* #introText>button {padding: 3px 5px; margin: 20px 8px; font-weight: bold; color: rgba(0, 0, 0, 0.5);
-                           border: 1px solid #ccc; border-radius: 1px; animation: btn 1.5s infinite;}
-                           @keyframes btn {0% {}
-                                           50% {color: rgba(0, 0, 0, 1);;}  
-                                           100% {}}
-         #introText>button:hover {color: rgba(255, 0, 0, 0.5); animation: none;} */
         /* ----main2_brand--------------------------------------------------------------------------------- */
-        #brand {width: 100%; height: 1200px; position: relative; background: url(redesign_img/bag.jpg) no-repeat center;}
+        #brand {width: 100%; height: 1200px; position: relative; 
+               background: url(redesign_img/bag.jpg) no-repeat center; 
+               background-size: cover; }
         #brand>h1 {font-size: 60px; padding: 30px 0px 15px; position: absolute; top: 50%; 
                    margin: -185px 0; color: white; z-index: 100;}
         #brandText {width: 750px; height: 350px; position: absolute; top: 50%; margin: -110px 0; background-color: rgba(255, 0, 0, 0.5);
@@ -109,41 +107,62 @@
         #brandText>h3 {font-size: 20px; padding: 0 10px;}
         #brandText>p {font-size: 15px; padding: 10px 30px 50px 10px;}
         #brandText>p>span {font-size: 16px; font-weight: bold; }
-        #brandText>p:nth-child(3) {position: absolute; right: 5px; bottom: -20px;}
+        #brandText>p:nth-child(3) {position: absolute; right: 5px; bottom: -20px; cursor: pointer;}
+        #brandText>p:nth-child(3):hover {font-weight: bold;}
         /* ----main2_introduce--------------------------------------------------------------------------------- */
-        #introduce {width: 100%; height: 1200px; background: url(redesign_img/cave1.jpg) no-repeat center;}
-        #introduceImg {width: 90%; position: relative; top: 250px; left: 30px;}
-        #introduceImg>img {width: 450px;}
-        #introduceImg>h3 {position: absolute; top: 195px; left: 150px;}
-        #introduceImg>p {position: absolute; font-weight: bold; font-size: 17px;}
-        #introduceImg>p:nth-child(3) {top: 110px; left: 85px;}
-        #introduceImg>p:nth-child(4) {top: 300px; left: 60px;}
-        #introduceImg>p:nth-child(5) {top: 405px; left: 195px;}
-        #introduceImg>p:nth-child(6) {top: 300px; left: 340px;}
-        #introduceImg>p:nth-child(7) {top: 110px; left: 325px;}
-
+        #introduce {width: 100%; background-size: cover; height: 1200px; position: relative; overflow: hidden;}
+        #introduce>#bg>video {object-fit: cover; height: 1200px; width: 100%; z-index: -1;
+                              position: absolute; top: 0; left: 0;}
+        #introduce>#bg>img {width: 100%; z-index: -1; position: absolute;}
         
+        #introduceImg {width: 100%; position: absolute; top: 35%; left: 400px; z-index: 200;}
+        #introduceImg>img {width: 450px; z-index: 5;}
+        #introduceImg>h3 {position: absolute; top: 195px; left: 150px;}
+        #introduceImg>p {transition: 1s; position: absolute; color: white; cursor: pointer;
+                         font-weight: bold; font-size: 20px;}
+        #introduceImg>p:nth-child(3) {top: 90px; left: 65px; padding: 15px;}
+        #introduceImg>p:nth-child(4) {top: 290px; left: 50px; padding: 5px;}
+        #introduceImg>p:nth-child(5) {top: 395px; left: 182px; padding: 5px; }
+        #introduceImg>p:nth-child(6) {top: 290px; left: 340px; padding: 5px; }
+        #introduceImg>p:nth-child(7) {top: 98px; left: 320px; padding: 5px; }
+
+        #introduceText {color: white; width: 700px; position: absolute; top: 40%; left: 50%;}
+
         /* ----main3_product--------------------------------------------------------------------------------- */
-         #product {width: 100%; height: 1010px; position: relative; display: flex;}
+         #product {width: 100%; height: 1010px; position: relative; display: flex; }
          #product>#product1 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_1.jpg) no-repeat center;}
          #product>#product2 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_2.jpg) no-repeat center;}
          #product>#product3 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_3.jpg) no-repeat center;}
-        .productText {width: 90%; height: 90%; background: rgba(0, 0, 0, 0.5); margin: 0 auto; 
-                      margin-top: 10%; display: none;}
-        /* #product1:hover .productText{
-            display: block; transition: 1.5s;
-        } */
-
-
+         .productText {width: 90%; height: 90%; background: rgba(0, 0, 0, 0.5); margin: 7% auto; 
+                       display: none;}
+        .productText>h4 {color: white; font-size: 25px; text-align: center; animation: pd 1s infinite;
+                         padding-top: 400px;}
+            @keyframes pd {
+                0% {}
+                50% {text-shadow: 0 0 10px white;}
+                100% {}
+            }
+ 
         /* ----footer--------------------------------------------------------------------------------- */
-         footer {width: 100%; height: 200px; background-color: black; opacity: 0.8; color: #ccc;}
-         #footerText {margin: 0 auto; width: 500px; text-align: center; border: 1px solid yellow;}
+         footer {width: 100%; height: 300px; background-color: black; display: flex; 
+                align-items: center; justify-content: space-between;
+                opacity: 0.8; color: #ccc;}
+         #footerText1 {padding: 0 15px; width: 65%;}
+         #footerText1>h3 {padding: 0px 5px 15px 5px; font-size: 45px; }
+         #footerText1>p {padding: 5px; font-size: 14px; line-height: 20px;}
+         
+         #footerText2 {font-size: 14px; padding: 0 15px; width: 35%;}
+         #footerText2>ul {display: flex; justify-content: space-around; padding: 15px;}
+         #footerText2>ul>li {padding: 5px; cursor: pointer;}
+         #footerText2>ul>li:hover {font-weight: bold;}
+         #footerText2>h4 {line-height: 20px; font-size: 15px; padding: 5px;}
+         #footerText2>p {line-height: 20px; padding: 5px;}
     </style>
 </head>
 <body>
     <div id="container">
         <a href="#intro" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
-        <a href="#footerText" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+        <a href="#footerText1" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
         <header>
             <!------------------------------------------------------------------------------------->
             <div id="header1">
@@ -419,7 +438,7 @@
                         for(let i=0; i<=menu.length; i++) {
                             $('.category1>ul').hide()
                        $(menu).mouseover(function() {
-                        $(this).children('ul').stop().slideDown(500)
+                        $(this).children('ul').stop().slideDown()
                         $(this).siblings('li').children('ul').stop().hide()
                         $(this).children().children('h4').css('color', 'red')
                         $(this).siblings('li').children().children('h4').css('color', '')
@@ -464,16 +483,90 @@
             </article>
 
             <article id="introduce">
+                <div id="bg">
+                    <video src="redesign_img/mountine.mp4" autoplay muted loop id="bg1"></video>
+                    <img src="redesign_img/hiking.jpg" alt="" id="bg2">
+                    <img src="redesign_img/cave1.jpg" alt="" id="bg3">
+                    <img src="redesign_img/bag.jpg" alt="" id="bg4">
+                </div>
+
                 <div id="introduceImg" class="none">
                     <img src="redesign_img/Untitled-1.png">
                     <h3 style="color: red; font-size: 25px;">Who We Are</h3>
-                    <p>영감</p>
-                    <p>성능</p>
-                    <p>장인정신</p>
-                    <p>혁신의 아이콘</p>
+                    <p class="bgT1">영감</p>
+                    <p class="bgT2">성능</p>
+                    <p class="bgT3">장인정신</p>
+                    <p class="bgT4">혁신의 아이콘</p>
                     <p>지속가능성</p>
                 </div>
+                <div id="introduceText">
+                    <ul>
+                        <li>
+                            챕터 01: 영감의 원천, 코스트산맥
+                            캐나다는 개척정신이 깃든 나라라고 할 수 있습니다.
+                            지금 이 순간도 주변 환경과 끊임없이 소통을 이어나가고 있습니다.
+                            제대로 된 등반 장비를 만들기 위해 우리는 장비를 항상 테스트할 수 있는 장소에 회사를 세웠습니다.
+                            상품을 개발하고 제조하는 일 그리고 혁신적인 생각들은 모두 산에서 나옵니다.
+                        </li>
+                        <li>
+                            챕터 02: 최고의 성능을 향한 노력
+                            제조 장비, 다운 룸, 컬러 테스트, 세척기를 비롯한 완전한 공장 설비를 통해 아크테릭스만의 완벽한 제품을 생산합니다. 
+                            우리가 만족하는 제품을 위해선 3년 혹은 그 이상이 걸려도 최고의 제품을 만들기 위해 끊임없이 노력합니다.
+                        </li>
+                        <li>
+                            아크테릭스의 몇몇 제품은 완성되기까지 몇 시간에 걸친 수백 개의 공정을 거칩니다.
+    
+                            “이곳에서 아크테릭스의 품질 수준을 보증하는 사람들이 마찬가지로 전 세계 어디에서도 같은 수준의 제품을 만들어 냅니다.”
+                            KEITH COTMAN - 키이스 코트만 - ARC'ONE 공장 매니저
+                            
+                            디자인 센터와 ARC'One은 새로운 디자인 콘셉트를 통해 완벽하고 혁신적인 제조 방식의 길을 걸어나갑니다.
+                        </li>
+                        <li>W.L. Gore는 래미네이트 처리된 원자재의 공급자입니다.
+                            대부분의 원자재는 발수 처리된 페이스원단, 폴리머 멤브레인, 백커가 3중으로 접합된 형태 입니다.
+                        
+                            고어텍스는 평방인치당 90억 개의 구멍이 있습니다.
+                            물분자보다 작으면서 수증기보다는 큰 구멍의 크기와 구조 덕분에 고어텍스는 외부로부터의 
+                            물을 차단하면서 신체의 땀과 수분은 배출할 수 있게 됩니다.</li>
+                    </ul>
+                </div>
             </article>
+    <script>
+        $(function() {
+            $('#bg1').show()
+            $('#introduceImg>img').show()
+            $('#bg1').siblings().hide()
+    
+            $('.bgT1').on('click', function() {
+                $('#bg1').fadeIn()
+                $('#bg1').siblings().hide()
+            })
+            $('.bgT2').on('click', function() {
+                $('#bg2').fadeIn()
+                $('#bg2').siblings().hide()
+                $('#introduceImg').css('position', 'absolute')
+
+            })
+            $('.bgT3').on('click', function() {
+                $('#bg3').fadeIn()
+                $('#bg3').siblings().hide()
+            })
+            $('.bgT4').on('click', function() {
+                $('#bg4').fadeIn()
+                $('#bg4').siblings().hide()
+            })
+
+            $('#introduceImg>p').on('mouseover', function() {
+                $(this).css('color', 'black').css('textShadow', '0 0 10px white')
+                $(this).siblings().css('color', '')
+            })
+            
+            $('#introduceImg>p').on('click', function() {
+                $(this).css('color', 'red').css('textShadow', '0 0 10px white')
+                $(this).siblings().css('color', '')
+            })
+
+        })
+    </script>
             
             <article id="product">
                 <div id="product1" class="k">
@@ -483,7 +576,7 @@
                 </div>
                 <div id="product2">
                     <div class="productText">
-                        <h4>hikin & camping</h4>
+                        <h4>hiking & camping</h4>
                     </div>
                 </div>
                 <div id="product3">
@@ -498,7 +591,11 @@
                          if(i>=2) {i=0}
                          else {i++}
                          $('#product>div').on('mouseover', function() {
-                            $(this).children('.productText').css('display', 'block')
+                            $(this).children('.productText').stop().fadeIn()
+                            $(this).siblings().children('.productText').stop().fadeOut()
+                         })
+                         $('#product>div').on('mouseout', function() {
+                            $('#product>div').children('.productText').stop().fadeOut()
                          })
 
                         })
@@ -507,10 +604,29 @@
         </main>
 
         <footer>
-            <div id="footerText">
-                design by kks
+            <div id="footerText1">
+                <h3>ARCTERYX.VILLAGE</h3>
+                <p>주소 : 서울 강남구 00로 000-00 000호 | 상호(주)000000 | CEO : Stuart C. Haselden <br>
+                사업자등록번호 : 123-00-00000 <br>
+                통신판매신고번호 : 제2022-서울강남-00000호 | 부가통신사업신고번호 : 제2022-서울강남-00000호 <br>
+                TEL : 1533-0000 | FAX : 02-0000-0000</p>
+                <p>COPYRIGHTⓒ2023 THE ARCTERYX-connect Co.Ltd ALL RIGHTS RESERVED.</p>
+            </div>
+            <div id="footerText2">
+                <ul>
+                    <li>고객센터</li>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                    <li>매장안내</li>
+                </ul>
+                <h4>쇼핑몰 고객센터 1533-0000 <small>(유료) /080-000-0000(수신자부담) / 온라인상담</small> <br>
+                    ARCTERYX코리아그룹 고객센터 1644-0000 <small>(유료) /080-000-0000(수신자부담) / 온라인상담</small></h4>
+                <p>서울시 성동구 000로 00가길 0 / (주)00000 CS CENTER <br>
+                   상담시간 : 09:00~17:00 (토, 일 공휴일 휴무)<br>
+                   점심시간 : 12:30~13:30 (상담불가) </p>
             </div>
         </footer>
+        
 
     
 </body>
