@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="index.js"></script>
+    <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
+    <!--구글 폰트 (영문: <b>)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal&display=swap" rel="stylesheet">
+    <!--구글 폰트 (영문: 페이지1)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Neonderthaw&display=swap" rel="stylesheet">
+    <!--스와이퍼-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+       <title>PORTFOLIO</title>
+<style>
+ * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+        a {color: inherit; text-decoration: none;}
+        #up {margin-top: 50px; background: none; border: none; z-index: 200; color: white;
+              position: fixed; bottom: 40px; right: 5px;}
+        #down {margin-top: 50px; background: none; border: none; z-index: 200; color: white;
+              position: fixed; bottom: 15px; right: 5px;}
+
+
+          #wrap{ margin:0 auto; width:100%;}    
+
+        /* header-------------------------------------------------------------- */
+
+        header {font-family: 'Nanum Myeongjo', serif;
+                width: 100%; position: fixed; color: white; z-index: 100;
+                top:0; left:0;}
+
+        header>.logo {border: 2px solid white; color: white; width: 100px; padding: 5px; 
+                      text-align: center; font-weight: bold; margin: 20px 50px; font-size: 14px;}
+        header>ul {list-style: none; display: flex; position: absolute; top: 0; right: 15px;}
+        header>ul>a { padding: 14px; margin: 10px 10px; font-weight: bold; text-shadow: 5px 5px 3px gray;}
+        header>ul>a:hover {color: #ccc;}
+
+        /* intro-------------------------------------------------------------- */
+
+        #intro {width: 100%; height: 100vh; background: url(img/people-4050698_1920.jpg);
+                padding-top: 90px; text-align: center; font-family: 'Yeseva One', cursive;}
+        #intro>#p2  {margin: 30px 0; font-size: 27px; color: rgb(0, 0, 0);}
+        #intro>#p2>b {font-size: 35px; font-family: 'Metal', cursive; color: rgb(255, 255, 255); 
+                      text-shadow: 5px 5px 3px gray;}
+        #intro>h2 {width: 850px; font-size: 100px; margin: 60px auto 0; text-shadow: 5px 5px 3px gray;
+                   color: rgb(255, 255, 255); position: relative;}
+        #intro>h2>#p1 {width: 250px;font-size: 25px;  color: rgb(0, 0, 0);
+                     position: absolute; right: -20px; top: 120px;}
+        #intro>#p3 { color: rgb(0, 0, 0);}
+
+        /* index-------------------------------------------------------------- */
+
+        #index {width: 100%; height: 100vh; display: flex; padding: 70px 0;
+                background-color: #292c42;}
+
+        #index1 {width: 50%; height: 100%; position: relative; 
+                background: url(img/index0.jpg) no-repeat center;}
+        #index1>img { max-width: 100%; max-height: 100%; position: absolute;}
+        #index1>#indexText {position: absolute; color: white; text-align: center;
+                            width: 100%; margin-top: 50%; font-size: 30px;}
+                            #indexText>p {font-size: 17px;}
+
+        #index2 {width: 100%; height: 100%; background-color: white;
+                 padding: 60px 50px;}
+        #index2>p {font-weight: bold; font-size: 25px;}
+        #index2>h1 {font-size: 45px; padding: 5px 5px 35px;}
+        #index2>h2 {font-size: 40px; padding: 10px; margin: 17px 0;}
+        #indexPP>ul>li {font-size: 25px; padding: 5px; margin-left: 50px;}
+        .colorn {color: rgb(52, 52, 83);}
+        #index2>hr {border: 1.5px solid rgb(52, 52, 83); }
+
+        /* profile-------------------------------------------------------------- */
+        #profile {width: 100%; height: 100vh;
+                background: #292c42; position: relative;} 
+        #profile>#j>h3 {color: rgb(255, 255, 255); width: 550%; font-size: 30px;
+                       animation: j 7s linear infinite; padding: 70px 0;}
+            @keyframes j {form {transform: translate(0px)}
+                          to {transform: translate(-700px)}}
+                
+        #profileBox {width: 750px; height: 500px; margin: 30px auto; overflow: hidden;
+                    position: relative; border-radius: 20px;}
+        #profileBox>.fa-play {position: absolute; bottom: 10px; right: 35px; color: #292c42;}
+        #profileBox>.fa-pause {position: absolute; bottom: 10px; right: 15px; color: #292c42;}
+        #profile>#profileBox>#click {position: absolute; color: #292c42; bottom: 27px ; right: 60px;
+                         animation: click 1.5s infinite; opacity: 1;}
+                         @keyframes click {0% {}
+                                            50% {opacity: 0;}
+                                            100% {}}
+        #profile>#profileBox>#click>span {color: whitesmoke;}
+
+
+
+        #profileBox2 {width: 300%; display: flex; flex-flow: nowrap; 
+                     color: #292c42; background: whitesmoke;}
+        #profileBox2>.box {border: 1px solid white; width: 750px; height: 500px; }
+        .box>h1 {margin: 20px 0 20px 360px; text-shadow: 0 0 3px rgb(56, 56, 201);
+                 animation: g 2s infinite;}
+        @keyframes g {0% {}
+                      50% {text-shadow: 0 0 10px rgb(40, 40, 212);}
+                      100% {}}
+            /* box1-------------------------------- */
+        .box1>p {text-align: center;}
+        .box1>.inner  {width: 75%; margin: 30px auto; display: flex; }
+        #profileBox2>.box1>.inner>img {width: 250px; height: 320px;}
+        #profileBox2>.box1>.inner>.text {margin: 20px 0 0 30px ;}
+        #profileBox2>.box1>.inner>.text>p {padding: 5px;}
+            /* box2-------------------------------- */
+        .box2>.inner {display: flex; flex-flow: wrap; justify-content: space-around;}
+        .box2>h1 {margin-bottom: 30px;}
+        .box2>.inner>.merit1 {width:30%; border: 1px solid #ccc; border-radius: 20px;
+                              margin-bottom: 10px; height: 180px; padding: 15px;}
+            /* box3-------------------------------- */
+        .box3>.inner {display: flex; flex-flow: wrap; justify-content: space-around;}
+        .box3>.inner>div {padding: 5px; width: 30%; text-align: center; }
+
+        /* portfolio-------------------------------------------------------------- */
+        #portfolio { width: 100%; height: 100vh; background: #292c42; } 
+        #portfolio>h1 {text-align: center; color: white; font-size: 70px; padding-top: 50px; animation: pf 2s infinite;}
+        @keyframes pf {
+            0% {}
+            50% {text-shadow: 0 0 10px lightblue;}
+            100% {}
+        }
+        .swiper {width:90%;
+              height:80vh;  
+              margin : 0 auto;
+             }
+        .swiper-wrapper {width:90%; }  
+        .swiper-slide  {width:50%; } 
+        .slide {width: 100%; text-align: center; margin: 0 auto; margin-top: 150px;}
+        .slide>a>img {border-radius: 20px; padding: 0 20px 40px;}
+        .slide>a>img:hover {opacity: 0.8;}
+        .swiper-pagination {margin-bottom: 70px; font-size: 12px; color: white;}
+
+        /* contact-------------------------------------------------------------- */
+        #contact { width: 100%; height: 100vh; background: #292c42; color: whitesmoke;
+                font-family: 'Yeseva One', cursive; padding: 300px 0; position: relative;}
+        #contact>h2 {width: 100%; font-size: 100px; text-align: center;   
+                         text-shadow: 5px 5px 3px rgb(26, 24, 24);}
+        #contact>#call {width: 250px; margin-left: 50px; font-size: 25px; position: absolute; left: 0; bottom: 100px;}
+        #contact>#call>h3 {text-align: center; padding: 10px;}
+        #contact>#call>p {padding: 5px; font-size: 17px;}
+        #contact>#call>a>p {font-size: 13px; border: 1px solid whitesmoke; padding: 3px; animation: click 3s infinite;
+                            width: 120px; border-radius: 5px; margin: 10px auto; text-align: center;}
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+    $(function() {
+        var i = 0;
+        var pos = 0;
+        function re() {
+            $('#profileBox>.fa-play').on('click', function() {
+                if(i<2) {i++}
+                else {i = 0}
+                pos = i * (-750)
+                $('#profileBox2').animate({'margin-left' : pos},4000)
+            }) 
+        } 
+        
+        setInterval(re)
+
+       
+     
+         $('.fa-pause').on('click',function() {
+            $('#profileBox2').stop(true, true)
+         })
+      })
+</script>
+</head>
+<body>
+    <div id="wrap">
+    <a href="#intro" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
+    <a href="#contact" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+
+    <header>
+        <div class="logo">
+            <a href="#intro"><p>PORTFOLIO</p></a>
+        </div>
+        <ul>
+            <a href="#intro"><li>INTRO</li></a>
+            <a href="#index"><li>INDEX</li></a>
+            <a href="#profile"><li>ABOUT</li></a>
+            <a href="#portfolio"><li>PORTFOLIO</li></a>
+            <a href="#contact"><li>CONTACT</li></a>
+        </ul>
+    </header>
+<!-------------------------------------------------------------------------------------->
+
+    <article id="intro">
+        
+        
+        <h2><br> <b> PORTFOLIO</b><p id="p1">2023</p></h2>
+        <p id="p2"> Hi,
+            I'm web publisher <br>
+             My name is <b>  Kyung Suh </b>Kim.</p>
+        <p id="p3">DESIGN PORTFOLIO</p>
+
+        
+
+    </article>
+<!-------------------------------------------------------------------------------------->
+
+    <article id="index">
+        <div id="index1">
+            <img src="img/ind ex2.jpg" alt="">
+            <div id="indexText">
+            <h1>Portfolio</h1>
+            <p>Web designer & publisher Portfolio</p>
+            </div>
+        </div>
+
+        <div id="index2">
+            <p class="colorn">Index</p>
+            <h1 class="colorn">CONTENTS</h1>
+            <hr>
+            <h2><span class="colorn">01</span> PROFILE</h2>
+            <hr>
+            <h2 id="indexPP"><span class="colorn">02</span> PORTFOLIO
+                 <ul>
+                    <li>design logo</li>
+                    <li>design web</li>
+                    <li>re-design</li>
+                 </ul>
+            </h2>
+            <hr>
+            <h2><span class="colorn">03</span> CONTACT</h2>
+            </div>
+    </article>
+
+<!-------------------------------------------------------------------------------------->
+
+    <article id="profile">
+        <div id="j"><h3>#profile #merit #tool #profile #merit #tool #profile #merit #tool #profile #merit #tool #profile #merit #tool
+            #profile #merit #tool #profile #merit #tool #profile #merit #tool
+            #profile #merit #tool #profile #merit #tool</h3></div>
+        <div id="profileBox">
+            <div id="profileBox2">
+            <article class="box box1">
+                <h1>PROFILE</h1>
+                <div class="inner">
+                    <img src="img/증사.jpg" id="profile">
+                    <div class="text">
+                        <p><b>NAME :</b> Kim Kyung Suh</p>
+                        <p><b> D.O.B :</b> 09/18/2001</p>
+                        <p><b> TEL :</b> 010-1233-4567</p>
+                        <p><b> POSITION :</b> Web design & publisher</p>
+                        <p><b> CAREER :</b> six-month course <br>
+                            at an academy</p>
+                        <p><b> CERTIFICATE :</b> Web design <br>
+                               technician's written pass. <br>
+                               Web design technician practical <br> 
+                               examination scheduled to take</p>
+                    </div>
+                </div>
+                <p>" The joy of being <b>together</b> "</p>
+            </article>
+            <!-------------------------------------------------------->
+            <article class="box box2">
+                <h1>MERIT</h1>
+                <div class="inner">
+                    <div class="merit1">
+                        <i class="fa-solid fa-people-robbery fa-2xl"></i>
+                        <p><b>Comunication :</b> <br> I am a person who clearly 
+                              communicates my opinion and listens to the other person's 
+                              opinion.</p>
+                    </div>
+                    <div class="merit1">
+                        <i class="fa-solid fa-thumbs-up fa-2xl"></i>
+                        <p><b>stamina :</b><br> I have physical strength that doesn't tire 
+                            through exercise.</p>
+                   </div>
+                   <div class="merit1">
+                    <i class="fa-solid fa-people-group fa-2xl"></i>
+                    <p><b>Leadership :</b><br> I have the power to lead community 
+                        members through various leadership roles in my team.</p>
+                    </div>
+                    <div class="merit1">
+                        <i class="fa-solid fa-people-group fa-2xl"></i>
+                        <p><b>Leadership :</b><br> I have the power to lead community 
+                            members through various leadership roles in my team.</p>
+                    </div>
+                    <div class="merit1">
+                        <i class="fa-solid fa-people-group fa-2xl"></i>
+                        <p><b>Leadership :</b><br> I have the power to lead community 
+                            members through various leadership roles in my team.</p>
+                    </div>
+                    <div class="merit1">
+                        <i class="fa-solid fa-people-group fa-2xl"></i>
+                        <p><b>Leadership :</b><br> I have the power to lead community 
+                            members through various leadership roles in my team.</p>
+                    </div>
+               </div>
+               
+            </article>
+            <!-------------------------------------------------------->
+            <article class="box box3">
+                <h1>TOOLS</h1>
+                <div class="inner">
+                    <div>
+                      <img src="img/figma.png" class="small">
+                      <h3>Figma</h3>
+                    </div>
+                    <div>
+                        <img src="img/ps.png" class="small">
+                        <h3>Photoshop</h3>
+                    </div>
+                    <div>
+                        <img src="img/Ai.png" class="small">
+                        <h3>Illustrator</h3>
+                    </div>
+                    <div>
+                        <img src="img/html.png" class="small">
+                        <h3>Html</h3>
+                    </div>
+                    <div>
+                        <img src="img/css.png" class="small">
+                        <h3>Css</h3>
+                    </div>
+                    <div>
+                        <img src="img/java1.png" class="small">
+                        <h3>Javascript</h3>
+                    </div>
+                    <div>
+                        <img src="img/jquery.png" class="small">
+                        <h3>Jquery</h3>
+                    </div>
+                    <div>
+                        <img src="img/react.png" class="small">
+                        <h3>React</h3>
+                    </div>
+                   
+                </div>
+            </article>
+        </div>
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pause"></i>
+        <div id="click">
+            <p>click !</p>
+             <span> . . .. . </span> <i class="fa-solid fa-arrow-trend-down"></i>
+       </div>
+    </div>
+    </article>
+
+<!-------------------------------------------------------------------------------------->
+
+    <article id="portfolio">
+    <!-- Slider main container -->
+    <h1> PORTFOLIO</h1>
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="slide">
+            <a href="redesign/redesign-2.html"><img src="img/pf_1.jpg" width="600px" height="500px"></a>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="slide">
+            <a href="redesign/redesign-2.html"><img src="http://placehold.it/600X500"></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+            <a href="redesign/redesign-2.html"><img src="http://placekitten.com/600/500"></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide"> 
+            <a href="redesign/redesign-2.html"><img src="http://picsum.photos/600/500"></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+            <a href="redesign/redesign-2.html"><img src="http://placehold.it/600X500"></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide">
+            <a href="redesign/redesign-2.html"><img src="http://placekitten.com/600/500">   </a>
+          </div>
+          </div>
+        
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination">
+            
+        </div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev k"></div>
+        <div class="swiper-button-next k"></div>
+      
+      </div>
+    </article>
+<script>
+ 	
+    const swiper = new Swiper('.swiper',{	
+           direction: "horizontal",
+           loop: true,						
+           pagination: {
+               el: '.swiper-pagination',
+               type: 'fraction'
+           },	
+           navigation : {				
+               nextEl: '.swiper-button-next',
+               prevEl: '.swiper-button-prev',			
+           },
+           spaceBetween: 0,
+           slidesPerView: "auto",
+           grabCursor: true,
+           centeredSlides :true,
+           speed:1800,
+           effect:"coverflow",	
+           coverflowEffect: {
+               rotate: 50,
+               stretch: -100,
+               depth: 400,
+               modifier: 1,
+               slideShadows: false,
+           },
+           autoplay: {
+               delay:1000,		
+               disableOnInteraction : true
+           }	
+       });
+
+
+   </script>
+
+<!-------------------------------------------------------------------------------------->
+
+    <article id="contact">
+        <h2>THANK TOU</h2>
+        <div id="call">
+           <h3>CONTACT  </h3>
+           <p>T.E.L : +82 010-1233-4567 </p>
+           <p>eMail : rudtj212@naver.com </p>
+           <a href="#"><p>SEND MESSAGE</p></a>
+        </div>
+    </articles>
+
+</div>
+</body>
+</html>
