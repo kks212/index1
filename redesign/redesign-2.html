@@ -484,10 +484,11 @@
 
             <article id="introduce">
                 <div id="bg">
-                    <video src="redesign_img/mountine.mp4" autoplay muted loop id="bg1"></video>
-                    <img src="redesign_img/hiking.jpg" alt="" id="bg2">
-                    <img src="redesign_img/cave1.jpg" alt="" id="bg3">
-                    <img src="redesign_img/bag.jpg" alt="" id="bg4">
+                    <img src="redesign_img/i_1.jpg" id="bg1"></img>
+                    <img src="redesign_img/i_2.jpg" id="bg2">
+                    <img src="redesign_img/i_3.jpg" id="bg3">
+                    <img src="redesign_img/bag.jpg" id="bg4">
+                    <img src="redesign_img/hiking.jpg" id="bg5">
                 </div>
 
                 <div id="introduceImg" class="none">
@@ -497,7 +498,7 @@
                     <p class="bgT2">성능</p>
                     <p class="bgT3">장인정신</p>
                     <p class="bgT4">혁신의 아이콘</p>
-                    <p>지속가능성</p>
+                    <p class="bgT5">지속가능성</p>
                 </div>
                 <div id="introduceText">
                     <ul>
@@ -553,6 +554,10 @@
             $('.bgT4').on('click', function() {
                 $('#bg4').fadeIn()
                 $('#bg4').siblings().hide()
+            })
+            $('.bgT5').on('click', function() {
+                $('#bg5').fadeIn()
+                $('#bg5').siblings().hide()
             })
 
             $('#introduceImg>p').on('mouseover', function() {
