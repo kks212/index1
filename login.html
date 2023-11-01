@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    a {text-decoration: none; color: inherit;}
+    #container {width: 500px; margin: 200px auto; border: 1px solid #ccc; height: 500px; 
+                text-align: center; border-radius: 20px;}
+    ul {list-style: none; display: flex; text-align: center; margin: 0 auto; 
+         width: 300px; padding: 10px;}
+    ul>a>li {text-align: center; width: 100px;}
+    ul>a>li:hover {opacity: 0.5;}
+    a>img {width: 130px; margin: 50px 0;}
+    a>img:hover {opacity: 0.7; transition: 0.5s;}
+
+    #inform>label>input {width: 200px; padding: 7px; margin: 5px;}
+    #inform>button {width: 170px; padding: 7px; margin: 15px; background: black; 
+                   font-weight: bold; border-radius: 5px; color: white;}
+    #inform>button:hover {opacity: 0.9}
+
+</style>
+</head>
+<body>
+    <div id="container">
+        <a href="redesign-2.html">
+            <img src="redesign_img/logo.jpg">
+        </a>
+
+        <div id="inform">
+            <label for=""><input type="text" placeholder="ID"></label> <br>
+            <label for=""><input type="text" placeholder="PASSWORD"></label> <br>
+            <button>LOGIN</button>
+
+            <ul>
+                <a href="#"><li>ID 찾기</li></a>
+                <a href="#"><li>PW 찾기</li></a>
+                <a href="#"><li>회원가입</li></a>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

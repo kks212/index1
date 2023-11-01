@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/Jquery-3.7.1.js"></script>   <!---->
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <title>list</title>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+        a {color: inherit; text-decoration: none;}
+        #container {width: 100%; margin: 0 auto;}
+        ul {list-style: none;}
+        #up {margin-top: 50px; background: none; border: none; z-index: 10000; 
+              position: fixed; bottom: 70px; right: 50px;}
+        #down {margin-top: 50px; background: none; border: none; z-index: 10000;
+              position: fixed; bottom: 35px; right: 50px;}
+
+        /* header------------------------------------------------------------------------------------- */
+        header {width: 100%; margin: 0 auto; height: 250px; display: block; z-index: 10;}
+        #header2 {width: 100%;  padding: 5px;}
+        #header2>#logo {float: left; margin-left: 5%; position: absolute;}
+        #header2>#rightBar {width: 100%; float: right; margin-right: 2%; position: relative;}
+        #login {position: absolute; top: 10px; right: 0; }
+        #login>input {position: absolute; top: 3px ; left: -200px; border: #ccc; border-radius: 10px; 
+                      padding: 5px 10px; opacity: 0.7; }
+        #login>ul {display: flex;}
+        #login>ul>li {margin: 5px; font-size: 14px;}
+        #login>ul>li:hover {opacity: 0.5;}
+        .fa-magnifying-glass:hover {opacity: 0.5;}
+
+        #category {position: absolute; top: 70px; left: 50%; margin-left: -135px;
+                  font-size: 20px; font-weight: bold; cursor: pointer;}
+        #category>ul {display: flex;}
+        #category>ul>li {margin: 0 10px; width: 100%;}
+            /* category*/
+        .category1>ul {position: fixed; top: 150px; left: 0px; width: 100%; 
+                       padding: 20px;  background: rgb(255, 255, 255);}
+            /* category_style */
+                        .style>ul {height: 250px; display: flex; justify-content: center;}
+                        .style>ul>li {padding: 10px 20px; text-align: center; opacity: 0.7; margin: 0 20px;}
+                        .style>ul li img {opacity: 0.7; transition: 0.5s;}
+                        .style ul li:hover img {opacity: 1; transform: scale(1.1);}
+                        .style>ul>li:hover {opacity: 1;}  
+            /* category_men */    .subBar {width: 900px; margin: 0 auto;} /*men+women*/
+                        .men>ul {height: 310px; font-size: 17px; padding: 20px 5px; }
+                        .menSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
+                                 float: left; }
+                        .menSub>h4 {margin-bottom: 7px;}
+                        .menSub>h4:hover {opacity: 0.7;}  
+                        .menSub:nth-child(3) {margin-right: 52px;}
+                        .menSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -95px;}
+                        .menSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -100px;}
+                        .menSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .menSub>ul>li:hover { color: #ff0000;}  
+            /* category_women */
+                        .women>ul {height: 340px; font-size: 17px; padding: 20px 5px; }
+                        .womenSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
+                                   float: left; }
+                        .womenSub>h4 {margin-bottom: 7px;}
+                        .womenSub>h4:hover {opacity: 0.7;}  
+                        .womenSub:nth-child(3) {margin-right: 52px;}
+                        .womenSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -115px;}
+                        .womenSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -120px;}
+                        .womenSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .womenSub>ul>li:hover { color: #ff0000;}  
+            /* category_explore */
+                        .explore>ul {height: 310px; font-size: 17px; padding: 20px 5px; 
+                                     display: flex; justify-content: center; }
+                        .exploreSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px; 
+                                     width: 30%;}
+                        .exploreSub>h4 {margin-bottom: 7px;}
+                        .exploreSub>h4:hover {opacity: 0.7;}  
+                        .exploreSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
+                        .exploreSub>ul>li:hover { color: #ff0000;}  
+        /* main------------------------------------------------------------------------------------- */
+
+        main {width: 90%; height: 100%; margin: 0 auto;}
+        main>#list {display: flex; flex-flow: wrap;}
+        main>#list>a {width: 25%; text-align: center; margin: 10px 0;}
+        main>#list>a:hover {border: 1px solid #ccc;}
+
+        #number {display: flex; margin: 30px auto; width: 160px; }
+        #number>li {padding: 5px 10px;}
+        #number>li:hover {font-weight: bold; border: 1px solid #ccc;}
+
+
+
+         /* ----footer--------------------------------------------------------------------------------- */
+         footer {width: 100%; height: 300px; background-color: black; display: flex; 
+                align-items: center; justify-content: space-between;
+                opacity: 0.8; color: #ccc;}
+         #footerText1 {padding: 0 15px; width: 65%;}
+         #footerText1>h3 {padding: 0px 5px 15px 5px; font-size: 45px; }
+         #footerText1>p {padding: 5px; font-size: 14px; line-height: 20px;}
+         
+         #footerText2 {font-size: 14px; padding: 0 15px; width: 35%;}
+         #footerText2>ul {display: flex; justify-content: space-around; padding: 15px;}
+         #footerText2>ul>li {padding: 5px; cursor: pointer;}
+         #footerText2>ul>li:hover {font-weight: bold;}
+         #footerText2>h4 {line-height: 20px; font-size: 15px; padding: 5px;}
+         #footerText2>p {line-height: 20px; padding: 5px;}
+
+</style>
+</head>
+<body>
+
+    <div id="container">
+        <a href="#" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
+        <a href="#footer" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+        
+        <header>
+            <div id="header2">
+                <div id="logo"><a href="redesign-2.html"><img src="redesign_img/redesign_logo.png" width="110px"></a></div>
+                <div id="rightBar">
+                    <div id="login">
+                        <ul>
+                            <li><i class="fa-solid fa-magnifying-glass" style="color: red; cursor: pointer;"></i></li>
+                            <li><i class="fa-regular fa-heart" style="cursor: pointer;"></i></li>
+                            <li><i class="fa-regular fa-bell" style="cursor: pointer;"></i></li>
+                            <li><a href="#">MYPAGE</a></li>
+                            <li><a href="login.html">LOGIN / JOIN</a></li>
+                        </ul>
+                        <input type="text" placeholder="검색" autofocus>
+                    
+                        <script>
+                             $(function() {
+                                    $('#login>input').hide()
+                                $('.fa-magnifying-glass').on('click', function() {
+                                    $('#login>input').fadeToggle()
+                                })
+                        
+                            })
+                        </script><!--search-->
+                    </div>
+
+                    <div id="category">
+                        <ul>
+                            <li class="category1 style"><a href="#"><h4>STYLE</h4></a>
+                                <ul>
+                                    <li><img src="redesign_img/mountain.png">
+                                        <a href="#"><p>Mountain</p></a></li>
+                                    <li><img src="redesign_img/bike.png">
+                                        <a href="#"><p>Sports</p></a></li>
+                                    <li><img src="redesign_img/golf.png">
+                                        <a href="#"><p>Golf</p></a></li>
+                                    <li><img src="redesign_img/vest.png">
+                                        <a href="#"><p>Workwear</p></a></li>
+                                    <li><img src="redesign_img/camping.png">
+                                        <a href="#"><p>Camping</p></a></li>
+                                </ul>
+                            </li>
+                            <li class="category1 men"><a href="#"><h4>MEN</h4></a>
+                                <ul>
+                                    <div class="subBar">
+                                    <li class="menSub"><h4>Clothes</h4>
+                                        <ul>
+                                            <li>shell jacket</li>
+                                            <li>Insulation jacket</li>
+                                            <li>pants</li>
+                                            <li>fleece</li>
+                                            <li>base layer</li>
+                                            <li>shirts & tops</li>
+                                            <li>shorts</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Backpack</h4>
+                                        <ul>
+                                            <li>day pack</li>
+                                            <li>Multi day pack</li>
+                                            <li>travel & Life</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Climing equipment</h4>
+                                        <ul>
+                                            <li>harness</li>
+                                            <li>ropr bag</li>
+                                            <li>chalk bag</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Collection</h4>
+                                        <ul>
+                                            <li>Veilance</li>
+                                            <li>System_A</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>SHOP MORE</h4>
+                                        <ul>
+                                            <li>New Arrival</li>
+                                            <li>Ski & Snow Collection</li>
+                                            <li>Gift Guide</li>
+                                            <li>Layering Guide</li>
+                                            <li>Arc'type</li>
+                                            <li>Travel Collection</li>
+                                            <li>Exclusive</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Footwear</h4>
+                                        <ul>
+                                            <li>Boots</li>
+                                            <li>shoes</li>
+                                        </ul>
+                                    </li>
+                                    <li class="menSub"><h4>Acc</h4>
+                                        <ul>
+                                            <li>gloves</li>
+                                            <li>hat</li>
+                                            <li>other accessories</li>
+                                        </ul>
+                                    </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="category1 women"><a href="#"><h4>WOMEN</h4></a>
+                                <ul>
+                                    <div class="subBar">
+                                    <li class="womenSub"><h4>Clothes</h4>
+                                        <ul>
+                                            <li>shell jacket</li>
+                                            <li>Insulation jacket</li>
+                                            <li>pants</li>
+                                            <li>fleece</li>
+                                            <li>base layer</li>
+                                            <li>shirts & tops</li>
+                                            <li>dresses & skirts</li>
+                                            <li>shorts</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Backpack</h4>
+                                        <ul>
+                                            <li>day pack</li>
+                                            <li>Multi day pack</li>
+                                            <li>travel & Life</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Climing equipment</h4>
+                                        <ul>
+                                            <li>harness</li>
+                                            <li>ropr bag</li>
+                                            <li>chalk bag</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Collection</h4>
+                                        <ul>
+                                            <li>Veilance</li>
+                                            <li>System_A</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>SHOP MORE</h4>
+                                        <ul>
+                                            <li>New Arrival</li>
+                                            <li>Ski & Snow Collection</li>
+                                            <li>Gift Guide</li>
+                                            <li>Layering Guide</li>
+                                            <li>Arc'type</li>
+                                            <li>Travel Collection</li>
+                                            <li>Exclusive</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Footwear</h4>
+                                        <ul>
+                                            <li>Boots</li>
+                                            <li>shoes</li>
+                                        </ul>
+                                    </li>
+                                    <li class="womenSub"><h4>Acc</h4>
+                                        <ul>
+                                            <li>gloves</li>
+                                            <li>hat</li>
+                                            <li>other accessories</li>
+                                        </ul>
+                                    </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="category1 explore"><a href="#"><h4>EXPLORE</h4></a>
+                                <ul>
+                                    <li class="exploreSub"><h4>EXPLORE</h4>
+                                        <ul>
+                                            <li>Whoo We Are</li>
+                                            <li>Bird Blog</li>
+                                            <li>Coommunity Event</li>
+                                            <li>Outer Peace</li>
+                                            <li>Sustainability</li>
+                                            <li>Arc'teryx Naming Scheme</li>
+                                            <li>Obsessive Design</li>
+                                        </ul>
+                                    </li>
+                                    <li class="exploreSub">
+                                        <img src="redesign_img/barimg.jpg">
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            
+            <script>
+                 $(function() {
+                      var menu = $('.category1')
+                        for(let i=0; i<=menu.length; i++) {
+                            $('.category1>ul').hide()
+                       $(menu).mouseover(function() {
+                        $(this).children('ul').stop().slideDown()
+                        $(this).siblings('li').children('ul').stop().hide()
+                        $(this).children().children('h4').css('color', 'red')
+                        $(this).siblings('li').children().children('h4').css('color', '')
+                                                      }
+                                                 )}
+                        
+                        $(menu).mouseout(function() {
+                        $(this).children('ul').stop().slideUp()
+                        $(this).siblings('li').children('ul').hide()
+                        $(this).children().children('h4').css('color', '')
+                                                      })
+                  }) 
+            </script><!--subBar-->
+            </div>
+        </header>
+
+        <main>
+            <ul id="list">
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114657.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114801.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114831.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114852.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114909.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114932.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114948.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115005.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115024.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115050.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115113.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115133.jpg">
+                </li></a>
+            </ul>
+
+            <ul id="number">
+                <li><</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>></li>
+            </ul>
+
+        </main>
+
+        <footer id="footer">
+            <div id="footerText1">
+                <h3>ARCTERYX.VILLAGE</h3>
+                <p>주소 : 서울 강남구 00로 000-00 000호 | 상호(주)000000 | CEO : Stuart C. Haselden <br>
+                사업자등록번호 : 123-00-00000 <br>
+                통신판매신고번호 : 제2022-서울강남-00000호 | 부가통신사업신고번호 : 제2022-서울강남-00000호 <br>
+                TEL : 1533-0000 | FAX : 02-0000-0000</p>
+                <p>COPYRIGHTⓒ2023 THE ARCTERYX-connect Co.Ltd ALL RIGHTS RESERVED.</p>
+            </div>
+            <div id="footerText2">
+                <ul>
+                    <li>고객센터</li>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                    <li>매장안내</li>
+                </ul>
+                <h4>쇼핑몰 고객센터 1533-0000 <small>(유료) /080-000-0000(수신자부담) / 온라인상담</small> <br>
+                    ARCTERYX코리아그룹 고객센터 1644-0000 <small>(유료) /080-000-0000(수신자부담) / 온라인상담</small></h4>
+                <p>서울시 성동구 000로 00가길 0 / (주)00000 CS CENTER <br>
+                   상담시간 : 09:00~17:00 (토, 일 공휴일 휴무)<br>
+                   점심시간 : 12:30~13:30 (상담불가) </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
