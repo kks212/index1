@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/Jquery-3.7.1.js"></script>   <!---->
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
     <!-- jquery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <title>DESIGN WEB</title>
-    <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-        a {color: inherit; text-decoration: none; display: block;}
+    <title>list</title>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+        a {color: inherit; text-decoration: none;}
         #container {width: 100%; margin: 0 auto;}
         ul {list-style: none;}
         #up {margin-top: 50px; background: none; border: none; z-index: 10000; 
-              position: fixed; bottom: 70px; right: 50px; color: white;}
+              position: fixed; bottom: 70px; right: 50px;}
         #down {margin-top: 50px; background: none; border: none; z-index: 10000;
-              position: fixed; bottom: 35px; right: 50px; color: white;}
+              position: fixed; bottom: 35px; right: 50px;}
 
-        /* ------------------------------------------------------------------------------------- */
-        header {width: 100%; margin: 0 auto; position: fixed; display: block; z-index: 10;}
-        #header1 {width: 100%; padding: 3px; background: black; color: white; display: flex;}
-        #header1>.component {position: relative; display: flex; height: 27px; padding: 3px; overflow: hidden;
-                             width: 40%; margin: 0 auto;}
-        #header1>.component>i {position: absolute; padding: 5px;}
-        #header1>.component>#headerText>p {position: absolute; left: 50%; margin-left: -70px;}
-        #header1>.component>.fa-chevron-left {left: 0px;}
-        #header1>.component>.fa-chevron-right {right: 20px;}
-        #header1>#count {width: 40%; display: flex; justify-content: center;
-                         margin-right: 3%; font-size: 12px; margin: 5px 0 0 0;}
-        /* ----header2--------------------------------------------------------------------------------- */
+        /* header------------------------------------------------------------------------------------- */
+        header {width: 100%; margin: 0 auto; height: 250px; display: block; z-index: 10;}
         #header2 {width: 100%;  padding: 5px;}
         #header2>#logo {float: left; margin-left: 5%; position: absolute;}
         #header2>#rightBar {width: 100%; float: right; margin-right: 2%; position: relative;}
@@ -49,7 +40,7 @@
         #category>ul>li {margin: 0 10px; width: 100%;}
             /* category*/
         .category1>ul {position: fixed; top: 150px; left: 0px; width: 100%; 
-                       padding: 20px;  background: rgba(255, 255, 255, 0.7);}
+                       padding: 20px;  background: rgb(255, 255, 255);}
             /* category_style */
                         .style>ul {height: 250px; display: flex; justify-content: center;}
                         .style>ul>li {padding: 10px 20px; text-align: center; opacity: 0.7; margin: 0 20px;}
@@ -87,65 +78,20 @@
                         .exploreSub>h4:hover {opacity: 0.7;}  
                         .exploreSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
                         .exploreSub>ul>li:hover { color: #ff0000;}  
+        /* main------------------------------------------------------------------------------------- */
 
-        /* ----main_intro--------------------------------------------------------------------------------- */
-        main {width: 100%; padding-top: 27px;}
-        #intro {width: 100%; height: 1100px; position: relative; 
-                background: url(redesign_img/hiking.jpg) no-repeat center;
-                background-size: cover; }
-        #introText {width: 100%; position: absolute; top: 20%; text-align: center; 
-                    padding: 10px; color: black;}
-        #introText>h1 {font-size: 100px; }
-        #introText>h4 {font-size: 25px; }
-        /* ----main2_brand--------------------------------------------------------------------------------- */
-        #brand {width: 100%; height: 1200px; position: relative; 
-               background: url(redesign_img/bag.jpg) no-repeat center; 
-               background-size: cover; }
-        #brand>h1 {font-size: 60px; padding: 30px 0px 15px; position: absolute; top: 50%; 
-                   margin: -185px 0; color: white; z-index: 100;}
-        #brandText {width: 750px; height: 350px; position: absolute; top: 50%; margin: -110px 0; background-color: rgba(255, 0, 0, 0.5);
-                    padding: 60px 0; color: white;}
-        #brandText>h3 {font-size: 20px; padding: 0 10px;}
-        #brandText>p {font-size: 15px; padding: 10px 30px 50px 10px;}
-        #brandText>p>span {font-size: 16px; font-weight: bold; }
-        #brandText>p:nth-child(3) {position: absolute; right: 5px; bottom: -20px; cursor: pointer;}
-        #brandText>p:nth-child(3):hover {font-weight: bold;}
-        /* ----main2_introduce--------------------------------------------------------------------------------- */
-        #introduce {width: 100%; background-size: cover; height: 1200px; position: relative; overflow: hidden;}
-        #introduce>#bg>video {object-fit: cover; height: 1200px; width: 100%; z-index: -1;
-                              position: absolute; top: 0; left: 0;}
-        #introduce>#bg>img {width: 100%; z-index: -1; position: absolute;}
-        
-        #introduceImg {width: 100%; position: absolute; top: 35%; left: 400px; z-index: 200;}
-        #introduceImg>img {width: 450px; z-index: 5;}
-        #introduceImg>h3 {position: absolute; top: 195px; left: 150px;}
-        #introduceImg>p {transition: 1s; position: absolute; color: white; cursor: pointer;
-                         font-weight: bold; font-size: 20px;}
-        #introduceImg>p:nth-child(3) {top: 90px; left: 65px; padding: 15px;}
-        #introduceImg>p:nth-child(4) {top: 290px; left: 50px; padding: 5px;}
-        #introduceImg>p:nth-child(5) {top: 395px; left: 182px; padding: 5px; }
-        #introduceImg>p:nth-child(6) {top: 290px; left: 340px; padding: 5px; }
-        #introduceImg>p:nth-child(7) {top: 98px; left: 320px; padding: 5px; }
+        main {width: 90%; height: 100%; margin: 0 auto;}
+        main>#list {display: flex; flex-flow: wrap;}
+        main>#list>a {width: 25%; text-align: center; margin: 10px 0;}
+        main>#list>a:hover {border: 1px solid #ccc;}
 
-        #introduceText {color: white; width: 700px; position: absolute; top: 40%; left: 50%;}
+        #number {display: flex; margin: 30px auto; width: 160px; }
+        #number>li {padding: 5px 10px;}
+        #number>li:hover {font-weight: bold; border: 1px solid #ccc;}
 
-        /* ----main3_product--------------------------------------------------------------------------------- */
-         #product {width: 100%; height: 1010px; position: relative; display: flex; }
-         #product>div>a {height: 100%;}
-         #product1 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_1.jpg) no-repeat center;}
-         #product2 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_2.jpg) no-repeat center;}
-         #product3 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_3.jpg) no-repeat center;}
-         .productText {width: 90%; height: 90%; background: rgba(0, 0, 0, 0.5); margin: 7% auto; 
-                       display: none;}
-        .productText>h4 {color: white; font-size: 25px; text-align: center; animation: pd 1s infinite;
-                         padding-top: 400px;}
-            @keyframes pd {
-                0% {}
-                50% {text-shadow: 0 0 10px white;}
-                100% {}
-            }
- 
-        /* ----footer--------------------------------------------------------------------------------- */
+
+
+         /* ----footer--------------------------------------------------------------------------------- */
          footer {width: 100%; height: 300px; background-color: black; display: flex; 
                 align-items: center; justify-content: space-between;
                 opacity: 0.8; color: #ccc;}
@@ -159,95 +105,18 @@
          #footerText2>ul>li:hover {font-weight: bold;}
          #footerText2>h4 {line-height: 20px; font-size: 15px; padding: 5px;}
          #footerText2>p {line-height: 20px; padding: 5px;}
-    </style>
+
+</style>
 </head>
 <body>
+
     <div id="container">
-        <a href="#intro" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
-        <a href="#footerText1" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+        <a href="#" id="up"><i class="fa-solid fa-angle-up fa-xl"></i></a>
+        <a href="#footer" id="down"><i class="fa-solid fas fa-angle-down fa-xl"></i></a>
+        
         <header>
-            <!------------------------------------------------------------------------------------->
-            <div id="header1">
-                <div class="component">
-                <div id="headerText">
-                     <p>SALE UP TO 50%</p>
-                     <p>NEW ARRIVAlS</p>
-                </div>
-                <i class="fa-solid fa-chevron-left"></i>
-                <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <script src="js/Jquery-3.7.1.js"></script>   <!---->
-                <script>
-                    $(function() {
-                        var i=0;
-                        $('#headerText>p').eq(0).show()
-                        $('#headerText>p').eq(1).hide()
-                       
-                        $('.fa-chevron-left').on('click', function() {   //왼쪽 버튼
-                             i++;   //i=1
-                             if(i>1) {i=0}  
-                             else( i = 1)        
-                            $('#headerText>p').eq(i).siblings().hide();
-                            $('#headerText>p').eq(i).show()  
-                        })
-    
-                        $('.fa-chevron-right').on('click', function() {    //오른쪽 버튼 
-                            i++;   //i=1
-                             if(i>1) {i=0}  
-                             else( i = 1)        
-                            $('#headerText>p').eq(i).siblings().hide();
-                            $('#headerText>p').eq(i).show()  
-                        })
-    
-                        setInterval(re,2000);
-                        function re() {
-                            if(i<1) {i++}
-                            else {i = 0}
-                            $('#headerText>p').eq(i).show()
-                            $('#headerText>p').eq(i).siblings().hide()  
-                            }
-                    })
-    
-                </script> <!--맨위 바-->
-
-                <div id="count">
-                    <span id="year"></span>. <span id="month"></span>. <span id="day"></span> / 
-                    <p></p>
-                    <script>
-                       setInterval(clock, 1000);
-                       function clock() {
-                       var today = new Date();
-                       var now = today.toLocaleTimeString();
-                       document.querySelector('#count>p').innerText=now;
-                       }
-
-                       var now = new Date();
-                       var year = now.getFullYear();
-                       var month = now.getMonth()+1;
-                       var day = now.getDate();
-                       
-                       document.getElementById('year').innerHTML=year
-                       document.getElementById('year').style.color='white'
-                       document.getElementById('year').style.fontSize='12px'
-                       
-                       
-                       document.getElementById('month').innerHTML=month
-                       document.getElementById('month').style.color='white'
-                       document.getElementById('month').style.fontSize='12px'
-                       
-                       
-                       document.getElementById('day').innerHTML=day
-                       document.getElementById('day').style.color='white'
-                       document.getElementById('day').style.fontSize='12px'
-                    </script><!--날짜 시간-->
-                </div>           
-           
-           
-            
-             </div>
-            <!------------------------------------------------------------------------------------->
             <div id="header2">
-                <div id="logo"><a href="#intro"><img src="redesign_img/redesign_logo.png" width="110px"></a></div>
+                <div id="logo"><a href="redesign-2.html"><img src="redesign_img/redesign_logo.png" width="110px"></a></div>
                 <div id="rightBar">
                     <div id="login">
                         <ul>
@@ -455,164 +324,60 @@
             </script><!--subBar-->
             </div>
         </header>
-            <!------------------------------------------------------------------------------------->
+
         <main>
+            <ul id="list">
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114657.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114801.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114831.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114852.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114909.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114932.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 114948.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115005.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115024.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115050.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115113.jpg">
+                </li></a>
+                <a href="#"><li>
+                    <img src="list_img/화면 캡처 2023-11-01 115133.jpg">
+                </li></a>
+            </ul>
 
-            <article id="intro">
-                <div id="introText">
-                    <h4>기능성과 스타일로 완성하다</h4>
-                    <h1>ARCTERYX</h1>
-                </div>
-                <div class="none"></div>
-            </article>
+            <ul id="number">
+                <li><</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>></li>
+            </ul>
 
-            <article id="brand">
-                <h1>ARCTERYX BRAND</h1>
-                <div id="brandText" class="none">
-                <h3>ABOUT US</h3>
-                <p><span>ARCHAEOPTERYX LITHOGRAPHICA</span> <br>
-                    1 억 4 천만 년 전에 한 생물이 적대적인 수평 세계를 탈출하려고 애썼습니다. <br>
-                    그 생명체는 날렵하고 강인해 졌으며 남들이 오르지 못한 장엄한 세계로 향했습니다. <br> 
-                    마침내 그는 진화를 거듭하며 깃털을 가진 날개를 가지게 되었고 기존의 세계와는 전혀 다른 <br> 
-                    먹이사슬 경쟁을 하게 되었습니다. 아키옵테릭스 리소그래피카(Archaeopteryx lithographica)  <br>
-                    라고 명명된 이 생명체는 공룡의 후계자로서 최초의 조류로 알려져 있습니다. 아크테릭스의  <br>
-                    이름은 진화를 거듭하려는 의지를 나타내며. 아웃도어 환경에서 인간이 한발을 더 내딛을수  <br>
-                    있도록 기여할 것입니다. 우리는 항상 더 좋은 방법이 있다고 믿습니다</p>
-
-                <p>MORE →</p>
-                </div>
-            </article>
-
-            <article id="introduce">
-                <div id="bg">
-                    <img src="redesign_img/i_1.jpg" id="bg1"></img>
-                    <img src="redesign_img/i_2.jpg" id="bg2">
-                    <img src="redesign_img/i_3.jpg" id="bg3">
-                    <img src="redesign_img/bag.jpg" id="bg4">
-                    <img src="redesign_img/hiking.jpg" id="bg5">
-                </div>
-
-                <div id="introduceImg" class="none">
-                    <img src="redesign_img/Untitled-1.png">
-                    <h3 style="color: red; font-size: 25px;">Who We Are</h3>
-                    <p class="bgT1">영감</p>
-                    <p class="bgT2">성능</p>
-                    <p class="bgT3">장인정신</p>
-                    <p class="bgT4">혁신의 아이콘</p>
-                    <p class="bgT5">지속가능성</p>
-                </div>
-                <div id="introduceText">
-                    <ul>
-                        <li>
-                            챕터 01: 영감의 원천, 코스트산맥
-                            캐나다는 개척정신이 깃든 나라라고 할 수 있습니다.
-                            지금 이 순간도 주변 환경과 끊임없이 소통을 이어나가고 있습니다.
-                            제대로 된 등반 장비를 만들기 위해 우리는 장비를 항상 테스트할 수 있는 장소에 회사를 세웠습니다.
-                            상품을 개발하고 제조하는 일 그리고 혁신적인 생각들은 모두 산에서 나옵니다.
-                        </li>
-                        <li>
-                            챕터 02: 최고의 성능을 향한 노력
-                            제조 장비, 다운 룸, 컬러 테스트, 세척기를 비롯한 완전한 공장 설비를 통해 아크테릭스만의 완벽한 제품을 생산합니다. 
-                            우리가 만족하는 제품을 위해선 3년 혹은 그 이상이 걸려도 최고의 제품을 만들기 위해 끊임없이 노력합니다.
-                        </li>
-                        <li>
-                            아크테릭스의 몇몇 제품은 완성되기까지 몇 시간에 걸친 수백 개의 공정을 거칩니다.
-    
-                            “이곳에서 아크테릭스의 품질 수준을 보증하는 사람들이 마찬가지로 전 세계 어디에서도 같은 수준의 제품을 만들어 냅니다.”
-                            KEITH COTMAN - 키이스 코트만 - ARC'ONE 공장 매니저
-                            
-                            디자인 센터와 ARC'One은 새로운 디자인 콘셉트를 통해 완벽하고 혁신적인 제조 방식의 길을 걸어나갑니다.
-                        </li>
-                        <li>W.L. Gore는 래미네이트 처리된 원자재의 공급자입니다.
-                            대부분의 원자재는 발수 처리된 페이스원단, 폴리머 멤브레인, 백커가 3중으로 접합된 형태 입니다.
-                        
-                            고어텍스는 평방인치당 90억 개의 구멍이 있습니다.
-                            물분자보다 작으면서 수증기보다는 큰 구멍의 크기와 구조 덕분에 고어텍스는 외부로부터의 
-                            물을 차단하면서 신체의 땀과 수분은 배출할 수 있게 됩니다.</li>
-                    </ul>
-                </div>
-            </article>
-    <script>
-        $(function() {
-            $('#bg1').show()
-            $('#introduceImg>img').show()
-            $('#bg1').siblings().hide()
-    
-            $('.bgT1').on('click', function() {
-                $('#bg1').fadeIn()
-                $('#bg1').siblings().hide()
-            })
-            $('.bgT2').on('click', function() {
-                $('#bg2').fadeIn()
-                $('#bg2').siblings().hide()
-                $('#introduceImg').css('position', 'absolute')
-
-            })
-            $('.bgT3').on('click', function() {
-                $('#bg3').fadeIn()
-                $('#bg3').siblings().hide()
-            })
-            $('.bgT4').on('click', function() {
-                $('#bg4').fadeIn()
-                $('#bg4').siblings().hide()
-            })
-            $('.bgT5').on('click', function() {
-                $('#bg5').fadeIn()
-                $('#bg5').siblings().hide()
-            })
-
-            $('#introduceImg>p').on('mouseover', function() {
-                $(this).css('color', 'black').css('textShadow', '0 0 10px white')
-                $(this).siblings().css('color', '')
-            })
-            
-            $('#introduceImg>p').on('click', function() {
-                $(this).css('color', 'red').css('textShadow', '0 0 10px white')
-                $(this).siblings().css('color', '')
-            })
-
-        })
-    </script>
-            
-            <article id="product">
-                <div id="product1">
-                    <a href="list.html" id="k">
-                        <div class="productText">
-                        <h4>NEW ARRIVE</h4>
-                        </div>
-                    </a>
-                </div>
-                <div id="product2">
-                    <a href="list.html" id="k">
-                        <div class="productText">
-                        <h4>hiking & camping</h4>
-                       </div>
-                    </a>
-                </div>
-                <div id="product3">
-                    <a href="list.html" id="k">
-                        <div class="productText">
-                        <h4>All Day Season</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <script>
-                    $(function() {
-                         $('#product>div').on('mouseover', function() {
-                            $(this).children('#k').children('.productText').stop().fadeIn()
-                            $(this).siblings().children('#k').children('.productText').stop().fadeOut()
-                         })
-                         $('#product>div').on('mouseout', function() {
-                            $('#product>div').children('#k').children('.productText').stop().fadeOut()
-                         })
-
-                        })
-                </script>
-            </article>
         </main>
 
-        <footer>
+        <footer id="footer">
             <div id="footerText1">
                 <h3>ARCTERYX.VILLAGE</h3>
                 <p>주소 : 서울 강남구 00로 000-00 000호 | 상호(주)000000 | CEO : Stuart C. Haselden <br>
@@ -635,8 +400,6 @@
                    점심시간 : 12:30~13:30 (상담불가) </p>
             </div>
         </footer>
-        
-
-    
+    </div>
 </body>
 </html>
