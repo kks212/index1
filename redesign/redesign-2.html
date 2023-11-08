@@ -3,163 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/Jquery-3.7.1.js"></script>  
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
     <!-- jquery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="css/redesign.css">
     <title>DESIGN WEB</title>
-    <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
-        a {color: inherit; text-decoration: none; display: block;}
-        #container {width: 100%; margin: 0 auto;}
-        ul {list-style: none;}
-        #up {margin-top: 50px; background: none; border: none; z-index: 10000; 
-              position: fixed; bottom: 70px; right: 50px; color: white;}
-        #down {margin-top: 50px; background: none; border: none; z-index: 10000;
-              position: fixed; bottom: 35px; right: 50px; color: white;}
-
-        /* ------------------------------------------------------------------------------------- */
-        header {width: 100%; margin: 0 auto; position: fixed; display: block; z-index: 10;}
-        #header1 {width: 100%; padding: 3px; background: black; color: white; display: flex;}
-        #header1>.component {position: relative; display: flex; height: 27px; padding: 3px; overflow: hidden;
-                             width: 40%; margin: 0 auto;}
-        #header1>.component>i {position: absolute; padding: 5px;}
-        #header1>.component>#headerText>p {position: absolute; left: 50%; margin-left: -70px;}
-        #header1>.component>.fa-chevron-left {left: 0px;}
-        #header1>.component>.fa-chevron-right {right: 20px;}
-        #header1>#count {width: 40%; display: flex; justify-content: center;
-                         margin-right: 3%; font-size: 12px; margin: 5px 0 0 0;}
-        /* ----header2--------------------------------------------------------------------------------- */
-        #header2 {width: 100%;  padding: 5px;}
-        #header2>#logo {float: left; margin-left: 5%; position: absolute;}
-        #header2>#rightBar {width: 100%; float: right; margin-right: 2%; position: relative;}
-        #login {position: absolute; top: 10px; right: 0; }
-        #login>input {position: absolute; top: 3px ; left: -200px; border: #ccc; border-radius: 10px; 
-                      padding: 5px 10px; opacity: 0.7; }
-        #login>ul {display: flex;}
-        #login>ul>li {margin: 5px; font-size: 14px;}
-        #login>ul>li:hover {opacity: 0.5;}
-        .fa-magnifying-glass:hover {opacity: 0.5;}
-
-        #category {position: absolute; top: 70px; left: 50%; margin-left: -135px;
-                  font-size: 20px; font-weight: bold; cursor: pointer;}
-        #category>ul {display: flex;}
-        #category>ul>li {margin: 0 10px; width: 100%;}
-            /* category*/
-        .category1>ul {position: fixed; top: 150px; left: 0px; width: 100%; 
-                       padding: 20px;  background: rgba(255, 255, 255, 0.7);}
-            /* category_style */
-                        .style>ul {height: 250px; display: flex; justify-content: center;}
-                        .style>ul>li {padding: 10px 20px; text-align: center; opacity: 0.7; margin: 0 20px;}
-                        .style>ul li img {opacity: 0.7; transition: 0.5s;}
-                        .style ul li:hover img {opacity: 1; transform: scale(1.1);}
-                        .style>ul>li:hover {opacity: 1;}  
-            /* category_men */    .subBar {width: 900px; margin: 0 auto;} /*men+women*/
-                        .men>ul {height: 310px; font-size: 17px; padding: 20px 5px; }
-                        .menSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
-                                 float: left; }
-                        .menSub>h4 {margin-bottom: 7px;}
-                        .menSub>h4:hover {opacity: 0.7;}  
-                        .menSub:nth-child(3) {margin-right: 52px;}
-                        .menSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -95px;}
-                        .menSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -100px;}
-                        .menSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
-                        .menSub>ul>li:hover { color: #ff0000;}  
-            /* category_women */
-                        .women>ul {height: 340px; font-size: 17px; padding: 20px 5px; }
-                        .womenSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px auto; 
-                                   float: left; }
-                        .womenSub>h4 {margin-bottom: 7px;}
-                        .womenSub>h4:hover {opacity: 0.7;}  
-                        .womenSub:nth-child(3) {margin-right: 52px;}
-                        .womenSub:nth-child(6) {clear: both; margin-left: 180px; margin-top: -115px;}
-                        .womenSub:nth-child(7) {clear: both; margin-left: 330px; margin-top: -120px;}
-                        .womenSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
-                        .womenSub>ul>li:hover { color: #ff0000;}  
-            /* category_explore */
-                        .explore>ul {height: 310px; font-size: 17px; padding: 20px 5px; 
-                                     display: flex; justify-content: center; }
-                        .exploreSub {padding: 0px 20px; transition: 0.5s; text-align: center; margin: 10px; 
-                                     width: 30%;}
-                        .exploreSub>h4 {margin-bottom: 7px;}
-                        .exploreSub>h4:hover {opacity: 0.7;}  
-                        .exploreSub>ul>li {font-size: 16px; padding: 3px; font-weight:normal}  
-                        .exploreSub>ul>li:hover { color: #ff0000;}  
-
-        /* ----main_intro--------------------------------------------------------------------------------- */
-        main {width: 100%; padding-top: 27px;}
-        #intro {width: 100%; height: 1100px; position: relative; 
-                background: url(redesign_img/hiking.jpg) no-repeat center;
-                background-size: cover; }
-        #introText {width: 100%; position: absolute; top: 20%; text-align: center; 
-                    padding: 10px; color: black;}
-        #introText>h1 {font-size: 100px; }
-        #introText>h4 {font-size: 25px; }
-        /* ----main2_brand--------------------------------------------------------------------------------- */
-        #brand {width: 100%; height: 1200px; position: relative; 
-               background: url(redesign_img/bag.jpg) no-repeat center; 
-               background-size: cover; }
-        #brand>h1 {font-size: 60px; padding: 30px 0px 15px; position: absolute; top: 50%; 
-                   margin: -185px 0; color: white; z-index: 100;}
-        #brandText {width: 750px; height: 350px; position: absolute; top: 50%; margin: -110px 0; background-color: rgba(255, 0, 0, 0.5);
-                    padding: 60px 0; color: white;}
-        #brandText>h3 {font-size: 20px; padding: 0 10px;}
-        #brandText>p {font-size: 15px; padding: 10px 30px 50px 10px;}
-        #brandText>p>span {font-size: 16px; font-weight: bold; }
-        #brandText>p:nth-child(3) {position: absolute; right: 5px; bottom: -20px; cursor: pointer;}
-        #brandText>p:nth-child(3):hover {font-weight: bold;}
-        /* ----main2_introduce--------------------------------------------------------------------------------- */
-        #introduce {width: 100%; background-size: cover; height: 1200px; position: relative; overflow: hidden;}
-        #introduce>#bg>video {object-fit: cover; height: 1200px; width: 100%; z-index: -1;
-                              position: absolute; top: 0; left: 0;}
-        #introduce>#bg>img {width: 100%; z-index: -1; position: absolute;}
-        
-        #introduceImg {width: 100%; position: absolute; top: 35%; left: 400px; z-index: 200;}
-        #introduceImg>img {width: 450px; z-index: 5;}
-        #introduceImg>h3 {position: absolute; top: 195px; left: 150px;}
-        #introduceImg>p {transition: 1s; position: absolute; color: white; cursor: pointer;
-                         font-weight: bold; font-size: 20px;}
-        #introduceImg>p:nth-child(3) {top: 90px; left: 65px; padding: 15px;}
-        #introduceImg>p:nth-child(4) {top: 290px; left: 50px; padding: 5px;}
-        #introduceImg>p:nth-child(5) {top: 395px; left: 182px; padding: 5px; }
-        #introduceImg>p:nth-child(6) {top: 290px; left: 340px; padding: 5px; }
-        #introduceImg>p:nth-child(7) {top: 98px; left: 320px; padding: 5px; }
-
-        #introduceText {color: white; width: 700px; position: absolute; top: 40%; left: 50%;}
-
-        /* ----main3_product--------------------------------------------------------------------------------- */
-         #product {width: 100%; height: 1010px; position: relative; display: flex; }
-         #product>div>a {height: 100%;}
-         #product1 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_1.jpg) no-repeat center;}
-         #product2 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_2.jpg) no-repeat center;}
-         #product3 {width: 100%; height: 1000px; margin: 5px; background: url(redesign_img/product_3.jpg) no-repeat center;}
-         .productText {width: 90%; height: 90%; background: rgba(0, 0, 0, 0.5); margin: 7% auto; 
-                       display: none;}
-        .productText>h4 {color: white; font-size: 25px; text-align: center; animation: pd 1s infinite;
-                         padding-top: 400px;}
-            @keyframes pd {
-                0% {}
-                50% {text-shadow: 0 0 10px white;}
-                100% {}
-            }
- 
-        /* ----footer--------------------------------------------------------------------------------- */
-         footer {width: 100%; height: 300px; background-color: black; display: flex; 
-                align-items: center; justify-content: space-between;
-                opacity: 0.8; color: #ccc;}
-         #footerText1 {padding: 0 15px; width: 65%;}
-         #footerText1>h3 {padding: 0px 5px 15px 5px; font-size: 45px; }
-         #footerText1>p {padding: 5px; font-size: 14px; line-height: 20px;}
-         
-         #footerText2 {font-size: 14px; padding: 0 15px; width: 35%;}
-         #footerText2>ul {display: flex; justify-content: space-around; padding: 15px;}
-         #footerText2>ul>li {padding: 5px; cursor: pointer;}
-         #footerText2>ul>li:hover {font-weight: bold;}
-         #footerText2>h4 {line-height: 20px; font-size: 15px; padding: 5px;}
-         #footerText2>p {line-height: 20px; padding: 5px;}
-    </style>
 </head>
 <body>
     <div id="container">
@@ -176,7 +28,6 @@
                 <i class="fa-solid fa-chevron-left"></i>
                 <i class="fa-solid fa-chevron-right"></i>
                 </div>
-                <script src="js/Jquery-3.7.1.js"></script>   <!---->
                 <script>
                     $(function() {
                         var i=0;
@@ -448,7 +299,6 @@
                         
                         $(menu).mouseout(function() {
                         $(this).children('ul').stop().slideUp()
-                        $(this).siblings('li').children('ul').hide()
                         $(this).children().children('h4').css('color', '')
                                                       })
                   }) 
@@ -479,13 +329,87 @@
                     이름은 진화를 거듭하려는 의지를 나타내며. 아웃도어 환경에서 인간이 한발을 더 내딛을수  <br>
                     있도록 기여할 것입니다. 우리는 항상 더 좋은 방법이 있다고 믿습니다</p>
 
-                <p>MORE →</p>
+                <p id="more">MORE →</p>
                 </div>
+
+                <div id="model">
+                    <div id="modelText">
+                        <img src="redesign_img/logo.jpg" width="100px">
+                        <h3>HISTORY</h3>
+                        <hr>
+                        <p>아웃도어 브랜드의 탄생은 창업자들이 원하는 제품을 직접 만드는 것으로 시작한다. 
+                            1989년 댄 그린과 데이브 레인은 캐나다 브리티시 컬럼비아주는 이곳에서 다양한 영감을 
+                            받으며 아웃도어 활동을 한다. 이 둘은 등반을 위한 최고의 조건을 가진 이곳에서 사용하는 
+                            장비들이 기대에 미치지 못함을 느끼게 된다. 그렇게 이 둘은 아크테릭스의 전신인 '
+                            락 솔리드(Rock Solid)'를 창업한다. 두 창업자는 밴쿠버 북부에 있는 구두주걱 생산 공장을 
+                            인수하고, 직원 4명과 같이 회사를 운영한다. 데이브 레인은 동료 제러미 가드를 영입하고 창립 
+                            2년 후인 1991년 회사명을 ARC'TERYX로 바꾼다. 아크테릭스의 어원은
+                            '아르카이옵테릭스 리토그라피카'에서 따온 것이고 우리나라에서는 시조새로 불린다.</p>
+                            <br>
+                        <p>아크테릭스가 1998년에 개발한 방수지퍼, 워터타이트 지퍼는 세계 최초로 의류에 적용이 되었다. 
+                            우레탄 코팅을 해서 지퍼 부분에 덮개가 필요 없게 만들었고, 덮개 부분이 없어지면서 제품은 더 
+                            가벼워졌다. 봉제기술이 심처리도 '마이크로심'이라는 공법으로 타사가 1인치 당 8번의 스티치가 
+                            들어가면 아크테릭스는 1인치 당 16번의 스티치가 사용되어 내구성이 높아지면서 바늘땀이 많아진 
+                            만큼 시접 부위의 넓이가 줄어들어 옷의 무게가 더욱 가벼워졌다. 베이퍼 하네스를 만들 때 만든 열 
+                            성형 기법은 라미네이팅 기술로 발전을 한다. 2004년에는 실을 이용하지 않고 열을 가해 내피와 외피
+                             원단을 붙임으로 봉제 과정을 생략해버리는 기술을 선보였다. 이 기법의 장점은 별도의 방수 
+                             테이핑을 하지 않아도 되어 제품의 경량화를 실현시킬 수 있게 한다. 
+                            의류 하나에 들어가는 실의 무게 조차도 줄이려는 집착이 기술혁신을 가져다 준 것이다.</p>
+                            <br>
+                        <p>등산과 등반을 기반으로 제품들을 만들다가 2001년 새로운 영역으로 도전한다. 스키 & 스노우보드 
+                            의류를 만든다. 아크테릭스가 선보인 사이드와인더 자켓은 세계 최초로 3차원 입체 곡선 지퍼가 
+                            사용되었다. 직선 형태의 지퍼는 격한 활동 중 얼굴 특히 입술과 치아에 부딪혀 부상이 발생할 
+                            가능성이 있었다. 
+                            이러한 디테일로 완성된 자켓이 바로 지퍼가 중간에 곡선으로 꺾여서 올라가는 사이드와인더 자켓이다.</p>
+                        <p>2020년대 기준 100수 이상의 고어텍스 프로 2.0 자켓을 초경량으로 만들 수 있는, 사실상 경쟁자가 
+                            없는 수준의 하이테크 아웃도어 브랜드로 성장했으며 이에 공급이 수요를 못따라가는 품귀현상이
+                            이어지고 있다. 이에 루이비통 수석 디자이너가 아크테릭스 자켓을 입고 패션쇼에 참가하는 등 고급
+                            브랜드로써의 이미지 또한 굳혀지고 있다. 이에 
+                            비니 같은 단순 패션 아이템도 덩달아 선풍적으로 팔리는 등 유례없는 인기를 누리고 있는 상황이다.</p>
+                       
+                       
+                        <h3>Digression</h3>
+                        <hr>
+                        <p>한국에서는 이재용, 시진핑 등이 입는 것으로 널리 알려졌다.</p>
+                        <p>등산복 제품을 내놓는 아크테릭스(Arcteryx)의 하위 브랜드로 네이비씰이나 델타포스 같은 미군 
+                            특수부대를 비롯한 SWAT 같은 세계 각국의 군/경의 오퍼레이터들을 위한 전술 의류를 만드는 
+                            아크테릭스 리프(Aracteryx LEAF)가 있다. 아크테릭스의 등산복도 가격이나 품질이 넘사급이라 
+                            등산복계의 샤넬로 불리지만 아크테릭스 리프 제품은 그보다 더 고가인 어나더 레벨 수준. 품질 또한
+                             이세계 아이템 수준이다. 참고로 아크테릭스 리프 중 최고가의 하드쉘인 리프 알파 자켓
+                             (Arcteryx Leaf ALPHA Jacket)은 현재도 캐나다 아크 원 본사에서 생산되는 MADE IN CANADA를 
+                             고집 중이다. 이 때문에 캐나다 특수부대와 미군 특수부대에 납품되는 제품은 전부 MADE IN 
+                             CANADA일 거라고 생각하지만 미군 특수부대에 납품되기 위해서는 반드시 미국 내에서 생산이 되어야
+                              한다. 그래서 지금은 단종되었지만 한때 아크테릭스 감마LT의 수준을 아득히 뛰어넘는 넘사벽급 
+                              원단으로 역대 최고의 소프트쉘 자켓이라 불리던 리프 컴뱃 자켓(Arcteryx Leaf COMBAT Jacket) 
+                              중 미군 특수부대 납품용인 멀티캠 버전을 보면 MADE IN USA로 되어있었다. 
+                            현재도 (민수용이 아닌) 미군 특수부대에 납품되는 제품들은 MADE IN USA다.</p>
+                        <p>이근의 복장들을 보면 아크테릭스와 아크테릭스 리프 제품들을 애용하며 가짜사나이 교관들 역시 아크테릭스와
+                             아크테릭스 리프 제품을 착용하고 있었다</p>
+
+                        <button id="bt1">X</button>
+                        <button id="bt2">close</button>
+                    </div>
+                </div>
+            <script>
+                $(function() {
+                    $('#model').hide()
+                    $('#more').on('click', function() {
+                        $('#model').fadeIn()
+                    })
+
+                    $('#bt1').on('click', function() {
+                        $('#model').fadeOut()
+                    })
+                    $('#bt2').on('click', function() {
+                        $('#model').fadeOut()
+                    })
+                })
+            </script>
             </article>
 
             <article id="introduce">
                 <div id="bg">
-                    <img src="redesign_img/i_1.jpg" id="bg1"></img>
+                    <img src="redesign_img/i_1.jpg" id="bg1">
                     <img src="redesign_img/i_2.jpg" id="bg2">
                     <img src="redesign_img/i_3.jpg" id="bg3">
                     <img src="redesign_img/bag.jpg" id="bg4">
@@ -535,6 +459,7 @@
     <script>
         $(function() {
             $('#bg1').show()
+            $('.bgT1').css('color', 'red').css('textShadow', '0 0 10px white')
             $('#introduceImg>img').show()
             $('#bg1').siblings().hide()
     
