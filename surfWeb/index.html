@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/65f501c8da.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="js/Jquery-3.7.1.js"></script>  
+    <link rel="stylesheet" href="css/index.css">
+    <title>MAKE WAVE</title>
+</head>
+<body>
+
+<header>
+    
+<div id="backimg">
+    <div id="logo">
+        <a href="index.html"><img src="img/surfing-2789602_640 copy.png" id="img"></a>
+    </div>
+    <i class="fa-solid fa-bars" style="color: black;" id="bar"></i>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="directions.html">Directions</a></li>
+            <li><a href="#">Inquiry</a></li>
+            <span class="material-symbols-outlined">search</span>
+            <p><a href="#">Login / Join</a></p>
+        </ul>
+    </div>
+    <script>
+      $(function() {
+        $('#bar').on('click', function() {
+          $('#menu').fadeToggle()
+        })
+      })
+    </script>
+</div>
+
+<div id="text">
+<p>anyone have fun in Beach</p>
+  <h1>MAKE WAVE</h1>
+  <h4>// surfing Shop //</45>
+</div>
+</header>
+<!-- -------------------------------------------------- -->
+<main>
+    <div class="box">
+           <h3>MAKE WAVE <small> ㆍㆍㆍ Introduce</small> </h3>
+    <div class="box1">
+            <div id="box1img">
+               <img src="img/img1.jpg" class="sliders">
+               <img src="img/img3.jpg" class="sliders">
+               <img src="img/place3.jpg" class="sliders">  
+               <img src="img/img10.jpg" class="sliders">    
+           </div>
+
+
+<script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+         var x = document.querySelectorAll('.sliders');
+
+         for(let i=0; i<x.length; i++) {
+           x[i].style.display = 'none'
+         }
+       myIndex++
+         if(myIndex>x.length) {myIndex=1}
+         x[myIndex-1].style.display = 'block'
+         
+        }
+        setInterval(carousel, 2000)
+</script>
+
+           
+
+           <div id="box1text">
+           <p>ipperspiciatis voluptates commosuscipit sed doloremque distinctio nam, 
+               quaerat voluptate minima! Quo exercitationem voluptatem nisi. 
+               Lorem ipsum dolsecteturelit. Similique, perspiciatis voluptates commodi vel velit atque delectus molestiae aliquid, suscipit sed doloremque distinctio nam, quaerat volup
+               ionem voluptatem nisi.</p>     <br><br>
+     
+           <h4>Surfing lessons focused on professional instructors!!</h4>
+           <p><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto minima dicta, provident necessitatibus earum temporibus veniam placeat fu
+               git nihil dolores a ipsa sequi, vel at soluta in fugit? eius vero vitae, sunt quasi?</p>
+            </div>
+    </div>
+    </div>
+
+    <div class="box box2">
+        <h3>Hot Place</h3>
+        <div id="HP">
+            <div class="Place">
+                <img src="img/place2.jpg">
+                <h4>Laguna Beach</h4>
+                <p><b class="b1">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+                <p><b class="b1">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+             </div>
+            <div class="Place">
+              <img src="img/place1.jpg">
+              <h4>Surfyy Beach</h4>
+              <p><b class="b2">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+              <p><b class="b2">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+           </div>
+           <div class="Place">
+              <img src="img/img3.jpg">
+              <h4>Hajodae Beach</h4>
+              <p><b class="b3">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+              <p><b class="b3">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+           </div>
+        
+           <div class="Place">
+              <img src="img/food1.jpg">
+              <h4>Farm11</h4>
+              <p><b class="b4">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+              <p><b class="b4">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+           </div>
+           <div class="Place">
+              <img src="img/food2.jpg">
+              <h4>수산항물회</h4>
+              <p><b class="b5">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+              <p><b class="b5">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+           </div>
+           <div class="Place">
+              <img src="img/food3.jpg">
+              <h4>Favorite</h4>
+              <p><b class="b6">open :</b> 10:00~20:00 / fri~sat 24:00 </p>
+              <p><b class="b6">location :</b> 강원 양양군 현북면 중관정리 500-1 하조대해변</p>
+        </div>
+
+        <script>
+          $(function() {
+            $('.Place').on('mouseover', function() {
+              $(this).css('border', '1px solid #ccc')
+              $(this).siblings().css('border', '')
+            })
+            $('.Place').on('mouseout', function() {
+              $(this).css('border', '')
+            })
+          })
+        </script>
+        </div>
+    </div>
+
+
+</main>
+<!-- -------------------------------------------------- -->
+    
+<footer>
+    <ul>
+        <li><a href="#">전체서비스 </a></li>
+        <li><a href="#">이용약관 </a></li>
+        <li><a href="#">개인정보처리방침 </a></li>
+        <li><a href="#">통합검색 고객센터 </a></li>
+        <li><a href="#">ⓒMAKEWAVE Crop.</a></li>
+    </ul>
+</footer>
+</body>
+</html>
